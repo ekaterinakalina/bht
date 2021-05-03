@@ -1,14 +1,17 @@
 *{
-  box-sizing: border-box;
-  margin: 0;
-}
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    font-weight: lighter;
+  }
+  
 
-body {
-  font-family: "Poppins", sans-serif;
-  font-weight: lighter;
-}
 
-/* Navigation */
+  /* Navigation */
 .nav-container {
   background: #5D4954;
   height: 70px;
@@ -72,60 +75,15 @@ nav .logo {
   text-decoration: none;
   display: inline-block;
 }
+ 
+/* About */
 
-
-/* HOME */
-/* Header */
-.header-container {
-  background: #E2DDDD;
-  height: calc(100vh - 70px);
-  display: flex;
-  align-items: center;
+.container {
+    background: #E2DDDD;
+    height: calc(110vh - 70px);
+    display: flex;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.container h2{
+  
 }
-
-header h1 {
-  font-style: normal;
-  font-weight: stroke;
-  font-size: 50px;
-  color: #443B3B;
-  border: 1px solid #443B3B;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 35px;
-}
-
-header h2 {
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-margin-bottom: 30px;
-line-height: 119.5%;
-letter-spacing: 0.15em;
-color: #443B3B;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-header h3 {
-  font-size: 18px;
-  font-weight: lighter;
-  letter-spacing: 0.15em;
-  color: #443B3B;
-}
-
-header p {
- font-size: 18px;
- font-weight: lighter;
- letter-spacing: 0.15em;
- color: #443B3B;
-}
-
-header img {
-  margin-left: 150px;
-  margin-top: 90px;
-}
-
