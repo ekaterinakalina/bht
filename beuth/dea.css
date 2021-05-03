@@ -9,6 +9,8 @@
     font-weight: lighter;
   }
   
+
+
   /* Navigation */
   .nav-container {
     background: #5D4954;
@@ -63,6 +65,8 @@
   .nav-items li a:hover {
     transform: translateY(-5px);
   }
+
+
   
  
   /* DEA: Reber Grammar */
@@ -72,6 +76,8 @@
     height: calc(110vh - 70px);
     display: flex;
   }
+
+
 
   /* Header */
   .container h1 {   
@@ -84,11 +90,12 @@
       stroke: #443B3B(0, 0, 0, 0.25);
   }
 
+
   /* Richtige Buttons */
   .buttons_richtig {
     position: absolute;
-    right: 14%;
-    top: 42%;
+    right: 12%;
+    top: 24%;
   }
 
   .buttons_richtig li{
@@ -99,7 +106,7 @@
   }
 
   .buttons_richtig li:hover {
-    transform: translate(8px);
+    transform: translate(10px);
 
   }
 
@@ -122,6 +129,27 @@
 
 
 
+  /* Falsche Buttons */
+  .buttons_falsch {
+    position: absolute;
+    left: 80%;
+    top: 24%;
+  }
+
+  .buttons_falsch li {
+    cursor: pointer;
+    display: block;
+    transition: .4s ease-in-out;
+    list-style: none;
+  }
+
+  .buttons_falsch li:hover {
+    transform: translate(10px);
+  }
+
+
+
+
   /* Aninmation */
   .animation_container {
     position: relative;
@@ -132,5 +160,7 @@
     width: 803px;
     height: 654px;
 }
+
+
 
 
