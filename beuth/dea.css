@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    padding: 0;
     margin: 0;
   }
   
@@ -63,60 +64,73 @@
     transform: translateY(-5px);
   }
   
-  /* DEA */
-  /* Main */
-  /*.main {
+ 
+  /* DEA: Reber Grammar */
+  /* Container */
+  .container {
     background: #E2DDDD;
-    height: calc(100vh - 70px);
+    height: calc(110vh - 70px);
     display: flex;
-    align-items: center;
-  }*/
-  
-  .content {
-    background: #E2DDDD;
   }
 
-  .content h1 {   
-      position: relative;
+  /* Header */
+  .container h1 {   
+      position:absolute;
       font-weight: normal;
       font-size: 40px;
       line-height: 55px;
       color: #443B3B;
-      margin-left: 270px;
-      margin-top: 20px;
+      transform: translate(+65%, +20%);
       stroke: #443B3B(0, 0, 0, 0.25);
   }
 
-  .dea-graph img {
-      position: relative;
-      bottom: 50px;
-      left: 120px;
+  /* Richtige Buttons */
+  .buttons_richtig {
+    position: absolute;
+    right: 14%;
+    top: 42%;
   }
 
-  .buttons-richtig {
-      position: relative;
+  .buttons_richtig li{
+    cursor: pointer;
+    display: block;
+    list-style: none;
+    transition: .4s ease-in-out;
   }
 
-  .buttons-richtig li{
-      cursor: pointer;
-      transition: .4s ease-in-out;
+  .buttons_richtig li:hover {
+    transform: translate(8px);
+
   }
 
-  .buttons-richtig li:hover {
-      transform: translate(10px);
+  .button_beispiel_richtig {
+    position: absolute;
+    left: 62%;
+    top: 23%;
   }
 
-  .animation-container {
-      position: absolute;
-      transform: translate(-20%, -50%);
+  .button_beispiel_richtig li {
+    padding: 0 0;
+    cursor: pointer;
+    list-style: none;
+    transition: .4s ease-in-out;
   }
 
-  .animation-container img {
-    width: 683px; 
-    height: 444px;
+  .button_beispiel_richtig li:hover {
+    transform: translate(8px);
   }
 
 
 
+  /* Aninmation */
+  .animation_container {
+    position: relative;
+    transform: translate(+5%)
+  }
 
- 
+  .animation_container img {
+    width: 803px;
+    height: 654px;
+}
+
+
