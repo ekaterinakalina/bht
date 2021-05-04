@@ -81,12 +81,17 @@ nav ul{
     background: #E2DDDD;
     height: calc(110vh - 70px);
     display: flex;
+    align-items: center;
   }
 
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-
+   
   /* Header */
-  .container h1 {   
+  header h1 {   
       position:absolute;
       font-weight: normal;
       font-size: 40px;
