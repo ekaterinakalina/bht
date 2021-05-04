@@ -84,10 +84,11 @@ nav ul{
     align-items: center;
   }
 
-  header {
+  main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
    
   /* Header */
