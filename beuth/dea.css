@@ -166,7 +166,7 @@ nav ul{
 
 .animation_container {
     position: relative;
-    transform: translate(+5%)
+    transform: translate(+20%);
   }
 
 .animation_container img {
