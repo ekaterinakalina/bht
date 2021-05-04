@@ -91,7 +91,7 @@ nav ul{
 
    
   /* Header */
-  header h1 {   
+  .container h1 {   
       position:absolute;
       font-weight: normal;
       font-size: 40px;
