@@ -98,7 +98,8 @@ nav ul{
       font-size: 40px;
       line-height: 55px;
       color: #443B3B;
-      transform: translate(+65%, +20%);
+      left: +20%;
+      top: +12%;
       stroke: #443B3B(0, 0, 0, 0.25);
   }
 
@@ -166,7 +167,7 @@ nav ul{
 
 .animation_container {
     position: relative;
-    transform: translate(+45%);
+    transform: translate(+8%, -2%);
   }
 
 .animation_container img {
