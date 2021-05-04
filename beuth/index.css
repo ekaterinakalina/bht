@@ -53,7 +53,7 @@ nav ul{
 }
 .nav-items li a {
   color: #F3EAEA;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   display: inline-block;
@@ -67,7 +67,7 @@ nav ul{
 
 .nav-items li b {
   color: #1a1616;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
   text-decoration: none;
@@ -128,5 +128,6 @@ header p {
 header img {
   margin-left: 150px;
   margin-top: 90px;
+  transform: translate(+25%);
 }
 
