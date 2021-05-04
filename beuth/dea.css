@@ -162,12 +162,12 @@ nav ul{
 
 
   /* Aninmation */
-  .animation_container {
+  header .animation_container {
     position: relative;
     transform: translate(+5%)
   }
 
-  .animation_container img {
+  header .animation_container img {
     width: 603px;
     height: 454px;
 }
