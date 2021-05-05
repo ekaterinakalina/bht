@@ -83,6 +83,52 @@ nav ul{
     display: flex;
 }
 
-.container h2{
-  
+article {
+  font-size: 25px;
 }
+
+h2 {
+  font-size: 30px;
+  padding: 5%
+}
+
+.subheader {
+  font-size: 24px;
+  padding: 2%;
+}
+
+.word {
+  padding: 2%;
+  font-size: 28px;
+}
+
+hr {
+  color: #5D4954;
+  border: 2px solid #5D4954;
+  filter: blur(4px);
+}
+
+#p1{
+   padding: 3%;
+}
+
+#p2{
+  padding: 3%;
+}
+
+
+#p3{
+  padding: 3%;
+}
+
+
+#p4{
+  padding: 3%;
+}
+
+
+#p5{
+  padding: 3%;
+}
+
+
