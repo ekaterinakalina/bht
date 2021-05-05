@@ -160,10 +160,7 @@ nav ul{
     transform: translate(10px);
   }
 
-
-
-
-  /* Aninmation */
+  /* Animation */
 
 .animation_container {
     position: relative;
@@ -174,6 +171,14 @@ nav ul{
     width: 1203px;
     height: 854px;
 }
+
+svg {
+  animation-duration: 2s;
+}
+
+
+
+
 
 
 
