@@ -79,7 +79,7 @@ nav ul{
 
 .container {
     background: #E2DDDD;
-    height: calc(110vh - 70px);
+    height: calc(290vh - 70px);
     display: flex;
 }
 
