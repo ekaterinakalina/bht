@@ -1,3 +1,4 @@
+/* Body */
 *{
   box-sizing: border-box;
   margin: 0;
@@ -75,7 +76,7 @@ nav ul{
 }
 
 
-/* About */
+/* Container */
 
 .container {
     background: #E2DDDD;
@@ -83,31 +84,38 @@ nav ul{
     display: flex;
 }
 
+/* Hauptext Paragraphe */
 article {
   font-size: 25px;
 }
 
+/*  Begruessungstext */
 h2 {
   font-size: 30px;
   padding: 5%
 }
 
+/* Subüberschriften */
 .subheader {
   font-size: 24px;
   padding: 2%;
 }
 
+/* Ausgewählte Woerter im Text */
 .word {
   padding: 2%;
   font-size: 28px;
 }
 
+/* Trenungslinie */
 hr {
   color: #5D4954;
   border: 2px solid #5D4954;
   filter: blur(4px);
 }
 
+/* Abstand Paragraphe */
+/* Alternative - als Klasse darstellen */
 #p1{
    padding: 3%;
 }
