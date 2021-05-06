@@ -87,8 +87,9 @@ nav ul{
 
 /* Begruessungstext */
 h2 {
-  font-size: 30px;
-  padding: 5%
+  font-size: 25px;
+  color: #443B3B;
+  padding: 5%;
   font-weight: lighter;
 }
 
@@ -96,13 +97,15 @@ h2 {
 /* Überschriften in Absätzen */
 .subheader {
   font-size: 24px;
-  padding: 1%;
+  padding: 2%;
+    color: #443B3B;
 }
 
 /* Ausgewählte Woerter im Text */
 .word {
   padding: 2%;
   font-size: 28px;
+    color: #443B3B;
 }
 
 
@@ -117,7 +120,7 @@ hr {
 /* Font Paragraphe */
 article {
   font-size: 25px;
-  padding: 2%; 
+  color: #443B3B;
 } 
 
 
