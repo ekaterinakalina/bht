@@ -89,13 +89,14 @@ nav ul{
 h2 {
   font-size: 30px;
   padding: 5%
+  font-weight: lighter;
 }
 
 
 /* Überschriften in Absätzen */
 .subheader {
   font-size: 24px;
-  padding: 2%;
+  padding: 1%;
 }
 
 /* Ausgewählte Woerter im Text */
