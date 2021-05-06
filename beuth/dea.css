@@ -104,13 +104,14 @@ nav ul{
   }
 
 
-  /* Richtige Buttons */
+  /* Richtige Buttons Container*/
   .buttons_richtig {
     position: absolute;
     right: 12%;
     top: 30%;
   }
 
+  /* Richtige Buttons Links*/
   .buttons_richtig li{
     cursor: pointer;
     display: block;
@@ -123,6 +124,7 @@ nav ul{
 
   }
 
+  /* Button "Richtiges Beispiel" */
   .button_beispiel_richtig {
     position: absolute;
     left: 62%;
@@ -142,13 +144,14 @@ nav ul{
 
 
 
-  /* Falsche Buttons */
+  /* Falsche Buttons Container*/
   .buttons_falsch {
     position: absolute;
     left: 82%;
     top: 30%;
   }
 
+  /* Falsche Buttons Links*/
   .buttons_falsch li {
     cursor: pointer;
     display: block;
@@ -160,7 +163,9 @@ nav ul{
     transform: translate(10px);
   }
 
-  /* Animation */
+
+
+  /* Animation Container */
 
 .animation_container {
     position: relative;
@@ -170,10 +175,6 @@ nav ul{
 .animation_container img {
     width: 1203px;
     height: 854px;
-}
-
-svg {
-  animation-duration: 2s;
 }
 
 
