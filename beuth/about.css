@@ -84,18 +84,15 @@ nav ul{
     display: flex;
 }
 
-/* Hauptext Paragraphe */
-article {
-  font-size: 25px;
-}
 
-/*  Begruessungstext */
+/* Begruessungstext */
 h2 {
   font-size: 30px;
   padding: 5%
 }
 
-/* Subüberschriften */
+
+/* Überschriften in Absätzen */
 .subheader {
   font-size: 24px;
   padding: 2%;
@@ -107,12 +104,20 @@ h2 {
   font-size: 28px;
 }
 
+
 /* Trenungslinie */
 hr {
   color: #5D4954;
   border: 2px solid #5D4954;
   filter: blur(4px);
 }
+
+
+/* Font Paragraphe */
+article {
+  font-size: 25px;
+} 
+
 
 /* Abstand Paragraphe */
 /* Alternative - als Klasse darstellen */
