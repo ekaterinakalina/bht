@@ -433,6 +433,7 @@
     transition: 600ms;
   }
 
+
   #check_word:hover {
     transform: translateY(-5px);
   }
@@ -449,29 +450,26 @@
     transition: 600ms;
   }
 
+
   #enter_word:hover {
     transform: translateY(-5px);
-  }
-
-
+    
   #random_word {
-    position: relative;
-    background-color: #4ED16C;
-    color: #443B3B;
-    font-size: 22px;
-    border: none;
-    font-weight: bolder;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    top: +14%;
-    left: +4%;
-    transition: 600ms;
-  }
-
+      position: relative;
+      background-color: #4ED16C;
+      color: #443B3B;
+      font-size: 22px;
+      border: none;
+      font-weight: bolder;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      top: +14%;
+      left: +4%;
+      transition: 600ms;
+    }
+  
   #random_word:hover {
     transform: translateY(-5px);
   }
-
-
 
   #wrong_word {
     position: relative;
@@ -527,24 +525,27 @@
 
   #input:hover {
     transform: translateY(-5px);
+
+
+
+ #status {
+    width: 370px;
+    height: 230px;
+    top: 14%;
+    position: relative;
+    border-radius: 44px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  #status {
-     width: 370px;
-     height: 230px;
-     top: 14%;
-     position: relative;
-     border-radius: 44px;
-     border-top-left-radius: 0px;
-     border-top-right-radius: 0px;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#statustext {
+  font-size: 25px;
+  font-weight: lighter;
+  transform: translate(1%,-35%);
   }
 
-  #statustext {
-    font-size: 25px;
-    font-weight: lighter;
-    transform: translate(1%,-35%);
-  }
+    
 
   .slider_box {
     position: relative;
@@ -558,8 +559,6 @@
     width:4%;
   }
 
-
-  
     
 
 
@@ -586,13 +585,7 @@
 
     
 
-    
-
-    
-
-    
-
-
+ 
     
     
 

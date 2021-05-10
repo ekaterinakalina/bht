@@ -1,3 +1,4 @@
+/* Body */
 *{
   box-sizing: border-box;
   margin: 0;
@@ -69,13 +70,12 @@ nav ul{
   color: #1a1616;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
-  font-weight: lighter;
   text-decoration: none;
   display: inline-block;
 }
 
 
-/* About */
+/* Container */
 
 .container {
     background: #E2DDDD;
@@ -83,31 +83,48 @@ nav ul{
     display: flex;
 }
 
-article {
-  font-size: 25px;
-}
 
+/* Begruessungstext */
 h2 {
-  font-size: 30px;
-  padding: 5%
+  font-size: 25px;
+  color: #443B3B;
+  padding: 5%;
+  font-weight: lighter;
 }
 
+
+/* Überschriften in Absätzen */
 .subheader {
   font-size: 24px;
   padding: 2%;
+    color: #443B3B;
 }
 
+/* Ausgewählte Woerter im Text */
 .word {
   padding: 2%;
   font-size: 28px;
+    color: #443B3B;
 }
 
+
+/* Trenungslinie */
 hr {
   color: #5D4954;
   border: 2px solid #5D4954;
   filter: blur(4px);
 }
 
+
+/* Font Paragraphe */
+article {
+  font-size: 25px;
+  color: #443B3B;
+} 
+
+
+/* Abstand Paragraphe */
+/* Alternative - als Klasse darstellen */
 #p1{
    padding: 3%;
 }
