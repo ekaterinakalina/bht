@@ -450,25 +450,25 @@
     transition: 600ms;
   }
 
-
   #enter_word:hover {
     transform: translateY(-5px);
-    
-  #random_word {
-      position: relative;
-      background-color: #4ED16C;
-      color: #443B3B;
-      font-size: 22px;
-      border: none;
-      font-weight: bolder;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      top: +14%;
-      left: +4%;
-      transition: 600ms;
-    }
-  
+  }
+
+#random_word {
+  position: relative;
+  background-color: #4ED16C;
+  color: #443B3B;
+  font-size: 22px;
+  border: none;
+  font-weight: bolder;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  top: +14%;
+  left: +4%;
+  transition: 600ms;
+}
+
   #random_word:hover {
-    transform: translateY(-5px);
+     transform: translateY(-5px);
   }
 
   #wrong_word {
@@ -523,12 +523,12 @@
     transition: 600ms;
   }
 
-  #input:hover {
+#input:hover {
     transform: translateY(-5px);
+}
 
 
-
- #status {
+#status {
     width: 370px;
     height: 230px;
     top: 14%;
@@ -547,17 +547,17 @@
 
     
 
-  .slider_box {
+.slider_box {
     position: relative;
     color: #E2DDDD;
     transform: translate(10%,130%);
-  }
+}
 
-  .slider_box img {
+.slider_box img {
     position: relative;
     transform: translate(240%,20%);
     width:4%;
-  }
+}
 
     
 
