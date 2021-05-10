@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+	<!------------------------------------ Meta, Titel, Links ------------------------------------>
     <meta charset= "UTF-8">
     <meta name= "viewport" content= "width=device-width, initial scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel ="stylesheet" href="dea.css">
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="main.js"></script>
     <title>Reber Grammar</title>
 
 </head>
 <body>
 
+
+	<!------------------------------------ Navigation ------------------------------------>
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
@@ -43,66 +49,163 @@
         </div>
     </div>
 
-   
-    <div class="container">
-        <main>
-            
-            <h1>DEA: Reber Grammar</h1>
-            
-            <ul class="buttons_richtig">
-                
-                <li>
-                <img src="images/dea/button-richtig.svg"  onclick="slider ('images/dea/animation/reber-grammar.svg')"/>
-                </li>
-               
+       
+	<!------------------------------------ Main ------------------------------------>
+	<div class="main_container">
+		<main>
+		    <h1>DEA: Reber Grammar</h1>
 
-                <li>
-                <img src="images/dea/BPVVE.svg"  onclick="slider ('images/dea/animation/BPVVE.svg')"/>
-                </li>
+			<div class="reber_tabelle_box">
+				
+				<table class="reber_tabelle"> 
+				<tr>
+					<th class="table_letter">Q</th>
+					<th class="table_letter">&Sigma;</th>
+					<th class="table_letter">Q</th>
+				</tr>
 
-                <li>
-                <img src="images/dea/BTSSXXTVVE.svg" onclick="slider ('images/dea/animation/BTSSXXTVVE.svg')"/>
-               </li>
+				<tr id="1_row">
+					<td class="table_letter">Start</td>
+					<td class="table_letter">B</td>
+					<td class="table_letter">1</td>
+				</tr>
 
-               <li>
-                <img src="images/dea/BTSXXVPSE.svg" onclick="slider ('images/dea/animation/BTSXXVPSE.svg')"/>
-               </li>
+				<tr id="2_row">
+					<td class="table_letter">1</td>
+					<td class="table_letter">T</td>
+					<td class="table_letter">2</td>
+				</tr>
 
-               <li>
-                <img src="images/dea/BTXSE.svg" onclick="slider ('images/dea/animation/BTXSE.svg')"/>
-              </li>  
-           </ul> 
-            
-            
-            <ul class="buttons_falsch">
-              <li>
-                <img src="./images/dea/button-falsch.svg" onclick="slider('images/dea/animation/reber-grammar.svg')">
-              </li>
+				<tr id="3_row">
+					<td class="table_letter">1</td>
+					<td class="table_letter">P</td>
+					<td class="table_letter">3</td>
+				</tr>
 
-              <li>
-                  <img src="./images/dea/BSVVT.svg" onclick="slider('images/dea/animation/FALSCH/BSVVT.svg')">
-              </li>
+				<tr id="4_row">
+					<td class="table_letter">2</td>
+					<td class="table_letter">S</td>
+					<td class="table_letter">2</td>
+				</tr>
 
-              <li>
-                  <img src="./images/dea/BBBVS.svg" onclick="slider('images/dea/animation/FALSCH/BBBVS.svg')">
-              </li>
+				<tr id="5_row">
+					<td class="table_letter">2</td>
+					<td class="table_letter">X</td>
+					<td class="table_letter">4</td>
+				</tr>
 
-              <li>
-                  <img src="./images/dea/BPVPST.svg" onclick="slider('images/dea/animation/FALSCH/BPVPST.svg')">
-              </li>
+				<tr id="6_row">
+					<td class="table_letter">3</td>
+					<td class="table_letter">T</td>
+					<td class="table_letter">3</td>
+				</tr>
 
-              <li>
-                  <img src="./images/dea/BTXPSE.svg" onclick="slider('images/dea/animation/FALSCH/BTXPSE.svg')">
-              </li>  
-          </ul>  
+				<tr id="7_row">
+					<td class="table_letter">3</td>
+					<td class="table_letter">V</td>
+					<td class="table_letter">5</td>
+				</tr>
 
-          
-            <div class="animation_container">
-                <img src= "images/dea/animation/reber-grammar.svg" alt="graph" class="reber"/>
-            </div>   
+				<tr id="8_row">
+					<td class="table_letter">4</td>
+					<td class="table_letter">X</td>
+					<td class="table_letter">3</td>
+				</tr>
 
-        </main>
-    
-    <script src="main.js"></script>
-</body> 
+				<tr id="9_row">
+					<td class="table_letter">4</td>
+					<td class="table_letter">S</td>
+					<td class="table_letter">6</td>
+				</tr>
+
+				<tr id="10_row">
+					<td class="table_letter">5</td>
+					<td class="table_letter">P</td>
+					<td class="table_letter">4</td>
+				</tr>
+
+				<tr id="11_row">
+					<td class="table_letter">5</td>
+					<td class="table_letter">V</td>
+					<td class="table_letter">6</td>
+				</tr>
+
+
+				<tr id="12_row">
+					<td class="table_letter">6</td>
+					<td class="table_letter">E</td>
+					<td class="table_letter">End</td>
+				</tr>
+			</table>
+
+			<div class=tabelle_text>
+				<p>Q={1,2,3,4,5,6}</p>
+				<p>&Sigma;={B,T,P,S,X,V,E}</p>
+				<p>Start={St}</p>
+				<p>End={F}</p>
+			</div>
+		</div>
+
+		<div class="reber_graph_box">
+				<div class="kreis" id="kreis_start">St</div>
+				<div class="kreis" id="kreis1">1</div>
+				<div class="kreis" id="kreis2">2</div>
+				<div class="kreis" id="kreis3">3</div>
+				<div class="kreis" id="kreis4">4</div>
+				<div class="kreis" id="kreis5">5</div>
+				<div class="kreis" id="kreis6">6</div>
+				<div class="kreis" id="kreis_finish">F</div>
+				<img src="images/arrow_long_bottom.svg"       class="arrow" id="arrow1">
+				<img src="images/arrow_long_bottom_2.svg"     class="arrow" id="arrow2">
+				<img src="images/arrow_long_middle.svg"       class="arrow" id="arrow3">
+				<img src="images/arrow_long_top.svg"          class="arrow" id="arrow4">
+				<img src="images/arrow_long_top_2.svg"        class="arrow" id="arrow5">
+				<img src="images/arrow_middle_2.svg"          class="arrow" id="arrow6">
+				<img src="images/arrow_middle_top_bottom.svg" class="arrow" id="arrow7">
+				<img src="images/arrow_middle_top_bottom.svg" class="arrow" id="arrow8">
+				<img src="images/arrow_small.svg"             class="arrow" id="arrow9">
+				<img src="images/arrow_small.svg"             class="arrow" id="arrow10">
+				<img src="images/arrow_loop_top.svg"          class="arrow" id="arrow_loop1">
+				<img src="images/arrow_loop_bottom.svg"       class="arrow" id="arrow_loop2">
+			    <p id="b">B</p>
+				<p id="t">T</p>
+				<p id="s">S</p>
+				<p id="x">X</p>
+				<p id="s1">S</p>
+				<p id="e">E</p>
+				<p id="v">V</p>
+				<p id="v1">V</p>
+				<p id="t1">T</p>
+				<p id="p">P</p>
+				<p id="x1">X</p>
+				<p id="p1">P</p>
+			</div>
+
+			<div class="control_box">
+					<h2>Word</h2>
+					<input type="text" class="input" id="eingabefeld">
+					<button id="check_word">Check word</button>
+					<button id="enter_word">Enter a word</button>
+				    <button id="random_word">Enter random word</button>
+					<button id="wrong_word">Enter wrong word</button>
+					<button id="play">Play
+						<img src="images/play_button.svg">
+					</button>
+				 <div id="status">
+					<h2>Status</h2>
+					<p id="statustext"></p>
+				 </div>
+			    </div>
+			</div>
+
+			<div class="slider_box">
+				<img src="images/icon_speed.svg">
+				<input id="slider" type="range" max="2000" min="0" value="1000" step="200"> 
+			</div> 
+		  </div>
+		</main>
+	</div>
+	
+					
+</body>
 </html>
