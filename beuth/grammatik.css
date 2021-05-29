@@ -3,6 +3,7 @@
   margin: 0;
 }
 
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
@@ -10,23 +11,28 @@ body {
   color: #443B3B;
 }
 
-/* Navigation */
+/*----------------------------------------Navigation----------------------------------------*/
+
+/*-----------------Navigation bar-----------------*/
 .nav-container {
   background: #5D4954;
   height: 70px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
+
+/*-----------------Wrapper-----------------*/
 .wrapper {
   width: 1200px;
   margin: 0 auto;
 }
 
+/*-----------------Links styling-----------------*/
 .wrapper a {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 25px;
+  font-size: 30px;
   color: #F3EAEA;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
@@ -38,6 +44,7 @@ nav {
   justify-content: space-between; 
   height: 72px;
 }
+
 
 nav ul{
   display: flex;
@@ -53,6 +60,8 @@ nav ul{
 .nav-items li:nth-last-of-type(1) {
   margin: 0;
 }
+
+/*-----------------Active links-----------------*/
 .nav-items li a {
   color: #F3EAEA;
   font-size: 20px;
@@ -62,11 +71,13 @@ nav ul{
   transition: 600ms;
 }
 
+/*-----------------Hover function-----------------*/
 .nav-items li a:hover {
   transform: translateY(-5px);
 }
 
 
+/*-----------------Disabled links-----------------*/
 .nav-items li b {
   color: #1a1616;
   font-size: 20px;
@@ -76,7 +87,9 @@ nav ul{
   display: inline-block;
 }
 
-/*---------------------------------Main Container---------------------------------*/
+/*----------------------------------------Main container----------------------------------------*/
+
+/*-----------------Main container without navigation-----------------*/
 .main_container {
   height: calc(110vh - 70px);
   display: flex;
@@ -90,6 +103,7 @@ main {
 }
 
 
+/*-----------------Regel-Box-----------------*/
 .regel_box {
   position: absolute;
   width: 1502px;
@@ -101,6 +115,7 @@ main {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+/*-----------------Regel-Box: headings-----------------*/
 .regel_box h2 {
   font-size: 30px;
 }
@@ -121,24 +136,55 @@ h1 {
   transform: translate(-230px,-5px);
 } 
 
-
+/*-----------------Regel-Box: main font-----------------*/
 .regel_box p {
   padding: 10px;
   font-size: 25px;
   right: 20px;
 }
 
+/*-----------------Regel-Box: left side, ----------------*/
+.ausdruck_container {
+  position: absolute;
+  background-color: #FDFCFC;
+  border-radius: 15px;
+  right: 0px;
+  transform: translate(-50px,35px);
+  width: 650px;
+  height: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#ausdruck {
+  padding-bottom: 45px;
+}
+
 
 #generiere_ausdruck {
-  text-align: right;
-  transform: translate(-350px,-240px);
+  position: absolute;
+  right: 0px;
+  transform: translate(-300px,-70px);
   font-size: 35px;
-  font-weight: bold;
+  font-weight: bolder;
+}
+
+
+.schritte_container {
+  position: absolute;
+  background-color: #FDFCFC;
+  border-radius: 15px;
+  right: 0px;
+  transform: translate(-50px,170px);
+  width: 650px;
+  height: 250px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #produktionsschritte {
-  text-align: right;
-  transform: translate(-310px,-180px);
+  position: absolute;
+  right: 0px;
+  font-weight: bolder;
+  transform: translate(-230px,-5px);
   font-size: 25px;
 }
 
@@ -162,19 +208,6 @@ h1 {
 }
 
 
-.button_container {
-  position: absolute;
-  right: 0px;
-  transform: translate(-40px,380px);
-  word-spacing: 15px;
-}
-
-.button_org {
-    position: absolute;
-    right: 0px;
-    transform: translate(-520px,380px);
-}
- 
 button {
   position: relative;
   border-radius: 25px;
@@ -182,6 +215,13 @@ button {
   font-size: 18px;
   margin-top: 40px;
 }
+
+.button_container {
+  position: absolute;
+  right: 0px;
+  transform: translate(-270px,400px);
+}
+
 
 #richtig {
   background: #8BCDAB;
@@ -203,12 +243,43 @@ button {
   }
 
 
+.button_org {
+    position: absolute;
+    right: 0px;
+    transform: translate(-500px, 400px);
+}
+
+#start {
+    position: absolute;
+    right: 0px;
+    background: #8BCDAB;
+    width: 179px;
+    height: 49px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    border: none;
+    color: #FDFCFC;
+    font-weight: bold;
+  }
+
 #stop {
-  transform: translate(100px,100px);
+  position: absolute;
+  right: 0px;
+  transform:translate(0px, 70px);
+  background: #F58A8A;
+  width: 179px;
+  height: 49px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  color: #FDFCFC;
+  font-weight: bold;
 }
 
 #tech_stack {
   position: absolute;
+  right: 0px;
+  transform:translate(0px, 140px);
   background: #7696CD;
   width: 179px;
   height: 49px;
@@ -217,25 +288,13 @@ button {
   border: none;
   color: #FDFCFC;
   font-weight: bold;
-  display:block;
 }
 
-#tour_starten {
-  position: absolute;
-  background: #8BCDAB;
-  width: 179px;
-  height: 49px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
-  border: none;
-  font-weight: bold;
-  display:block;
-}
 
 .slider_box {
   position: absolute;
-  right: 140px;
-  transform: translate(0px,540px);
+  right: 0px;
+  transform: translate(-140px,580px);
 }
 
 .slider_box #slider {
