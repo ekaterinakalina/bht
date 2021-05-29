@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     
-       <!-- Meta, Title -->
+ <!------------------------------------ Meta, Title, Links ------------------------------------>
 <head>
     <meta charset= "UTF-8">
     <meta name= "viewport" content= "width=device-width, initial scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src=grammatik.js></script>
     <link rel ="stylesheet" href="grammatik.css">
     <title>Grammatik</title>
 
@@ -13,16 +15,16 @@
 <body>
 
     
-       <!-- Navigation -->
+    <!------------------------------------ Navigation ------------------------------------>
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
-                <div class="logo"><a href="index.html">
+                <div class="logo"><a href="index.html">          <!--Logo-->
                     THEORETISCHE INFORMATIK
                 </a>
                 </div>
 
-                <ul class="nav-items">
+                <ul class="nav-items">                           <!--Links in der Navbar-->
                     <li>
                         <a href="about.html">About</a>
                     </li>
@@ -32,7 +34,7 @@
                     </li>
 
                     <li>
-                        <b href="grammatik.html">Grammatik</b>
+                        <a href="grammatik.html">Grammatik</a>
                     </li>
 
                     <li>
@@ -48,8 +50,57 @@
     </div>
 
     
-       <!-- Header/Main -->
+     <!------------------------------------ Main Container ------------------------------------>
+    <div class="main_container">
+        <main>
+            <h1>Kontextfreie Grammatik</h1>  
+
+            <div class="regel_box">                             <!--Vokabular-->
+                <h2 id="h2_1">Vokabular</h2>
+                
+                <div class="schritte_box">
+                    <h2 id="h2_2">Produktionsschritte</h2>
+                    <p id="generiere_ausdruck"></p>             <!--Text eines richtigen/falschen Ausrducks-->
+                    <p id="produktionsschritte"></p>            <!--Text Produktionsschritte-->
+                    <p id="step"></p>
+
+                    <div class="button_container">                       <!--Buttons-->
+                        <button id="richtig" onclick="ausdruck_richtig()">Generiere einen <strong>richtigen</strong> Ausdruck</button>
+                                                                         <!--JS Funktion, generirert ein Wort aus der Grammatik-->
+                        <button id="falsch" onclick="ausdruck_falsch()">Generiere einen <strong>falschen</strong> Ausdruck</button>
+                                                                          <!--JS Funktion, generirert ein Wort NICHT aus der Grammatik-->
+                        <button id="start">Start</button> 
+                        <button id="stop">Stop</button>                                                     
+                    </div>
+
+                    <div class="button_org">
+                        <button id="tour_starten">Tour starten!</button> <!--Erklärt die Schritte-->
+                        <button id="tech_stack">Tech Stack</button>      <!--Alert mit Tech Beschreibung-->
+                    </div>
+    
+                    
+                    <div class="slider_box">                          
+                        <input id="slider" type="range" value="600" step="200" min="0" max="2000">     <!--Slider-->
+                    </div>
+                </div>                                          
+
+                
+                <div class="regel_box_text">
+                    <p><strong>Grammatik:</strong> G = {V,Σ,R,S}</p>
+                    <p><strong><span style="color: #8BCDAB">Terminalvariablen:</span></strong> Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}</p>
+                    <p><strong><span style="color: #F58A8A">Nichtterminalvariablen:</span></strong> V = {A,O,Z}; S={A}</p>
+                    <p><strong>Regeln</strong> R:</p>
+                </div>
+
+
+                <div class="vokabular">                       <!--Regeln-->
+                    <p> <span id="A">1. A →</span> <span id="aZ">(a)Z</span>  <span id="AOA">(b)AOA</span>  <span id="A2">(c)(A)</span></p>  
+                    <p> <span id="O">2. O →</span>  <span id="signs">+| - | / | *</span></p> 
+                    <p> <span id="Z">3. Z →</span>  <span id="numbers">0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</span></p>  
+                </div>
+            </div>
+        </main>
+    </div>
+    
 </body>
 </html>
-
-
