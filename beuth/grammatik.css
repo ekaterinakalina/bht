@@ -6,6 +6,8 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
+  background: #E2DDDD;
+  color: #443B3B;
 }
 
 /* Navigation */
@@ -74,6 +76,172 @@ nav ul{
   display: inline-block;
 }
 
+/*---------------------------------Main Container---------------------------------*/
+.main_container {
+  height: calc(110vh - 70px);
+  display: flex;
+  align-items: center;
+}
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.regel_box {
+  position: absolute;
+  width: 1502px;
+  height: 755px;
+  left: 200px;
+  top: 200px;
+  background: linear-gradient(90deg, #FDFCFC 50%, #C4C4C4 50%);
+  border-radius: 64px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.regel_box h2 {
+  font-size: 30px;
+}
+
+h1 {
+  position:absolute;
+  font-size: 50px;
+  transform: translate(670px, -400px);
+}
+
+#h2_1 {
+  text-align: left;
+  transform: translate(300px, 20px);
+} 
+
+#h2_2 {
+  text-align: right;
+  transform: translate(-230px,-5px);
+} 
+
+
+.regel_box p {
+  padding: 10px;
+  font-size: 25px;
+  right: 20px;
+}
+
+
+#generiere_ausdruck {
+  text-align: right;
+  transform: translate(-350px,-240px);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#produktionsschritte {
+  text-align: right;
+  transform: translate(-310px,-180px);
+  font-size: 25px;
+}
+
+#step {
+    text-align: right;
+    transform: translate(-310px,-180px);
+    font-size: 25px;
+  }
+
+
+.vokabular {
+  position: absolute;
+  font-weight: bold;
+  font: 55px;
+  padding-top: 60px;
+  word-spacing: 12px;
+}
+
+.vokabular p {
+  padding: 20px;
+}
+
+
+.button_container {
+  position: absolute;
+  right: 0px;
+  transform: translate(-40px,380px);
+  word-spacing: 15px;
+}
+
+.button_org {
+    position: absolute;
+    right: 0px;
+    transform: translate(-520px,380px);
+}
  
-/* Grammatik */
+button {
+  position: relative;
+  border-radius: 25px;
+  color: #443B3B;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+#richtig {
+  background: #8BCDAB;
+  width: 219px;
+  height: 106px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+}
+
+#falsch {
+  position: absolute;
+  background: #F58A8A;
+  width: 219px;
+  height: 106px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  }
+
+
+#stop {
+  transform: translate(100px,100px);
+}
+
+#tech_stack {
+  position: absolute;
+  background: #7696CD;
+  width: 179px;
+  height: 49px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  color: #FDFCFC;
+  font-weight: bold;
+  display:block;
+}
+
+#tour_starten {
+  position: absolute;
+  background: #8BCDAB;
+  width: 179px;
+  height: 49px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  display:block;
+}
+
+.slider_box {
+  position: absolute;
+  right: 140px;
+  transform: translate(0px,540px);
+}
+
+.slider_box #slider {
+  width: 250px;
+}
+
+
+
+
