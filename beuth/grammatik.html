@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     
- <!------------------------------------ Meta, Title, Links ------------------------------------>
+ <!------------------------------------ Meta, Title, Links ------------------------------------------------------------------>
 <head>
     <meta charset= "UTF-8">
     <meta name= "viewport" content= "width=device-width, initial scale=1.0">
@@ -15,7 +15,7 @@
 <body>
 
     
-    <!------------------------------------ Navigation ------------------------------------>
+ <!------------------------------------  Navigation -------------------------------------------------------------------------->   
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
@@ -50,41 +50,15 @@
     </div>
 
     
-     <!------------------------------------ Main Container ------------------------------------>
+ <!------------------------------------  Main-Container ------------------------------------------------------------------------>  
     <div class="main_container">
         <main>
-            <h1>Kontextfreie Grammatik</h1>  
+            <h1>Kontextfreie Grammatik</h1>                             <!--Headline-->                  
 
-            <div class="regel_box">                             <!--Vokabular-->
+<!------------------------------------  Regel-Box: linke Seite, Vokabular ----------------------------------------------------->
+            <div class="regel_box">                                     
                 <h2 id="h2_1">Vokabular</h2>
-                
-                <div class="schritte_box">
-                    <h2 id="h2_2">Produktionsschritte</h2>
-                    <p id="generiere_ausdruck"></p>             <!--Text eines richtigen/falschen Ausrducks-->
-                    <p id="produktionsschritte"></p>            <!--Text Produktionsschritte-->
-                    <p id="step"></p>
 
-                    <div class="button_container">                       <!--Buttons-->
-                        <button id="richtig" onclick="ausdruck_richtig()">Generiere einen <strong>richtigen</strong> Ausdruck</button>
-                                                                         <!--JS Funktion, generirert ein Wort aus der Grammatik-->
-                        <button id="falsch" onclick="ausdruck_falsch()">Generiere einen <strong>falschen</strong> Ausdruck</button>
-                                                                          <!--JS Funktion, generirert ein Wort NICHT aus der Grammatik-->
-                        <button id="start">Start</button> 
-                        <button id="stop">Stop</button>                                                     
-                    </div>
-
-                    <div class="button_org">
-                        <button id="tour_starten">Tour starten!</button> <!--Erklärt die Schritte-->
-                        <button id="tech_stack">Tech Stack</button>      <!--Alert mit Tech Beschreibung-->
-                    </div>
-    
-                    
-                    <div class="slider_box">                          
-                        <input id="slider" type="range" value="600" step="200" min="0" max="2000">     <!--Slider-->
-                    </div>
-                </div>                                          
-
-                
                 <div class="regel_box_text">
                     <p><strong>Grammatik:</strong> G = {V,Σ,R,S}</p>
                     <p><strong><span style="color: #8BCDAB">Terminalvariablen:</span></strong> Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}</p>
@@ -93,11 +67,48 @@
                 </div>
 
 
-                <div class="vokabular">                       <!--Regeln-->
+                <div class="vokabular">                                <!--Regeln Text-->
                     <p> <span id="A">1. A →</span> <span id="aZ">(a)Z</span>  <span id="AOA">(b)AOA</span>  <span id="A2">(c)(A)</span></p>  
                     <p> <span id="O">2. O →</span>  <span id="signs">+| - | / | *</span></p> 
                     <p> <span id="Z">3. Z →</span>  <span id="numbers">0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</span></p>  
                 </div>
+                
+<!------------------------------------  Regel-Box: rechte Seite, Produktionsschritte ------------------------------------------>
+                
+                <div class="schritte_box">                            
+                    <h2 id="h2_2">Produktionsschritte</h2>
+                    
+
+                    <div class="ausdruck_container">                   <!--Text Ausdrucke-->
+                        <p id="ausdruck">Ausdruck:</p>
+                        <p id="generiere_ausdruck"></p>
+                    </div>
+
+                    <div class="schritte_container">                   <!--Text Schritte-->
+                        <p id="schritte">Schritte:</p>
+                        <p id="produktionsschritte"></p>               
+                    </div>
+
+ <!------------------------------------  Buttons ------------------------------------------------------------------------------>  
+                    <div class="button_container">                       <!--Buttons "richtig", "falsch"-->
+                        <button id="richtig" onclick="ausdruck_richtig()">Generiere einen <strong>richtigen</strong> Ausdruck</button>
+                                                                         <!--JS Funktion, generirert einen richtigen Ausdruck-->
+                        <button id="falsch" onclick="ausdruck_falsch()">Generiere einen <strong>falschen</strong> Ausdruck</button>
+                                                                         <!--JS Funktion, generirert einen falschen Ausdruck-->                                                  
+                    </div>
+
+
+                    <div class="button_org">                             <!--Manipulations-buttons-->
+                        <button id="tech_stack">Tech Stack</button>      <!--Alert mit Tech Beschreibung-->
+                        <button id="stop">Stop</button>                  <!--Stoppt die Animation-->
+                    </div>
+    
+                    
+                    <div class="slider_box">                             <!--Slider-->
+                        <input id="slider" type="range" value="600" step="200" min="0" max="2000">     
+                    </div>
+                </div>                                          
+
             </div>
         </main>
     </div>
