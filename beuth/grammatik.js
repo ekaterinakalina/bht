@@ -978,4 +978,3 @@ $("#kreis_z").css("background-color", "#8BCDAB");
 break;
 }
  */
-
