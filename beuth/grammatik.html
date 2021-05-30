@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src=grammatik.js></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel ="stylesheet" href="grammatik.css">
     <title>Grammatik</title>
 
@@ -55,13 +56,14 @@
         <main>
             <h1>Kontextfreie Grammatik</h1>                             <!--Headline-->                  
 
-<!------------------------------------  Regel-Box: linke Seite, Vokabular ----------------------------------------------------->
+<!------------------------------------  Regel-Box: linke Seite, Vokabular ------------------------------------------------------>
             <div class="regel_box">                                     
-                <h2 id="h2_1">Vokabular</h2>
+                <h2 id="h2_1">Vokabular</h2>                            <!--Subheadline-->   
 
                 <div class="regel_box_text">
                     <p><strong>Grammatik:</strong> G = {V,Σ,R,S}</p>
                     <p><strong><span style="color: #8BCDAB">Terminalvariablen:</span></strong> Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}</p>
+                    <p>wo z={0|1|2|3|4|5|6|7|8|9},  o={+|-|*|/}</p>
                     <p><strong><span style="color: #F58A8A">Nichtterminalvariablen:</span></strong> V = {A,O,Z}; S={A}</p>
                     <p><strong>Regeln</strong> R:</p>
                 </div>
@@ -69,14 +71,14 @@
 
                 <div class="vokabular">                                <!--Regeln Text-->
                     <p> <span id="A">1. A →</span> <span id="aZ">(a)Z</span>  <span id="AOA">(b)AOA</span>  <span id="A2">(c)(A)</span></p>  
-                    <p> <span id="O">2. O →</span>  <span id="signs">+| - | / | *</span></p> 
-                    <p> <span id="Z">3. Z →</span>  <span id="numbers">0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</span></p>  
+                    <p> <span id="O">2. O → +| - | / | *</span></p> 
+                    <p> <span id="Z">3. Z →  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</span></p>  
                 </div>
                 
-<!------------------------------------  Regel-Box: rechte Seite, Produktionsschritte ------------------------------------------>
+<!------------------------------------  Regel-Box: rechte Seite, Produktionsschritte ------------------------------------------->
                 
                 <div class="schritte_box">                            
-                    <h2 id="h2_2">Produktionsschritte</h2>
+                    <h2 id="h2_2">Produktionsschritte</h2>              <!--Subheadline-->   
                     
 
                     <div class="ausdruck_container">                   <!--Text Ausdrucke-->
@@ -89,7 +91,7 @@
                         <p id="produktionsschritte"></p>               
                     </div>
 
- <!------------------------------------  Buttons ------------------------------------------------------------------------------>  
+ <!------------------------------------  Buttons ------------------------------------------------------------------------------->  
                     <div class="button_container">                       <!--Buttons "richtig", "falsch"-->
                         <button id="richtig" onclick="ausdruck_richtig()">Generiere einen <strong>richtigen</strong> Ausdruck</button>
                                                                          <!--JS Funktion, generirert einen richtigen Ausdruck-->
@@ -98,14 +100,55 @@
                     </div>
 
 
-                    <div class="button_org">                             <!--Manipulations-buttons-->
-                        <button id="tech_stack">Tech Stack</button>      <!--Alert mit Tech Beschreibung-->
-                        <button id="stop">Stop</button>                  <!--Stoppt die Animation-->
+                    <div class="button_org">                                                 <!--Buttons zur Manipulation-->
+                        <button id="tech_stack" onclick="myAlert()">Tech Stack</button>      <!--Alert-Button mit Dokumentation-->
+                        <button id="stop">Stop</button>                                      <!--Stop-Button: stoppt die Animation-->
                     </div>
     
                     
-                    <div class="slider_box">                             <!--Slider-->
-                        <input id="slider" type="range" value="600" step="200" min="0" max="2000">     
+                    <div class="slider_box">                                                 <!--Slider-->
+                        <input id="slider" type="range" value="1500" step="200" min="0" max="3000">     
+                    </div>
+                    
+ <!------------------------------------  Dokumentation ------------------------------------------------------------------------------->  
+
+                    <div id="alert_text">   
+                        <p>Diese kontextfreie Grammatik erzeugt zufällige richtige und falsche arithmetische Ausdrücke über einstelligen natürlichen Zahlen mit den Operanden
+                        "+,-,*,/" und beliebig vielen Klammern().</p>
+                        <p>   </p>
+                        <p>**Vokabular:**</p>
+
+                        <p>Grammatik: G = {V,Σ,R,S}</p>
+                        <p>Terminalvariablen: Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}<p>
+                        <p>Nichtterminalvariablen: V = {A,O,Z}; S={A}</p>  
+                        <p>Regeln R:</p>
+                        <p>1. A → (a)Z;  (b)AOA;  (c)(A) </p>  
+                        <p>2. O → +| - | / | *</p> 
+                        <p>3. Z →  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</p>  
+                        <p>   </p>
+
+                        <p>**Tech Stack**</p>
+                        <p>   </p>
+                        <p>*JavaScript*: die Web-Anwedung besteht aus zwei Hauptfunktionen ausdruck_richtig() und ausdruck_falsch(), 
+                            die zufällige arithmetische Ausdrücke mit Hilfe der Methode "Math.floor(Math.random()" erzeugen. 
+                            Die Struktur der Funktionen basiert sich auf "switch-case" Verzweigung. 
+                        <p>   </p>
+                            Kontrolle wird durch Buttons "Generiere einen richtigen/falschen Ausdruck", "Stop", "Slider" ermöglicht.
+                            Die Hauptbuttons erzeugen einen richtigen/falschen Ausdruck und eine Reihe von Produktionsschritten.
+                            Beide Ausgaben werden in separaten Feldern gezeigt. Gleichzeitig wird Animation der Regeln gestartet.
+                        <p>   </p>
+                        <p>*jQuery*: ist eine JS-Bibliothek und wird zur einfacheren Manipulation der HTML-Elemente benutzt.
+                           Die Web-Anwedung ist automatisch animiert: die Reihenfolge der Regeln wird schrittweise angezeigt und
+                           wird mit Farben und vergrößerter Schrift verdeutlicht. Die Hauptmethoden sind: ".animate()", ".css()".
+                           Mit "setTimeout(function()" wird die Ausgabe zeitlich verzögert, dadurch wird schrittweises Abspielen
+                           erreicht. Link: https://api.jquery.com
+                        <p>   </p>
+                        <p>*SweetAlert*: ein JS Framework, das als mehr interessanter Ersatz für "window.alert()"-Funktion dient und
+                            das Lesen dieser Dokumentation ermöglicht! Link: https://sweetalert.js.org</p> 
+                        <p>   </p>
+                        <p>*HTML5*: Strukturierung von Inhalten</p> 
+                        <p>   </p> 
+                        <p>*CSS*: Gestaltung</p> 
                     </div>
                 </div>                                          
 
@@ -115,3 +158,5 @@
     
 </body>
 </html>
+
+
