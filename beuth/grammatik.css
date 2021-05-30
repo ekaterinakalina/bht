@@ -11,9 +11,9 @@ body {
   color: #443B3B;
 }
 
-/*----------------------------------------Navigation----------------------------------------*/
+/*---------------------------------------- Navigation ----------------------------------------*/
 
-/*-----------------Navigation bar-----------------*/
+/*----------------- Navigation bar -----------------*/
 .nav-container {
   background: #5D4954;
   height: 70px;
@@ -21,13 +21,13 @@ body {
 } 
 
 
-/*-----------------Wrapper-----------------*/
+/*----------------- Wrapper -----------------*/
 .wrapper {
   width: 1200px;
   margin: 0 auto;
 }
 
-/*-----------------Links styling-----------------*/
+/*----------------- Links styling -----------------*/
 .wrapper a {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -61,7 +61,7 @@ nav ul{
   margin: 0;
 }
 
-/*-----------------Active links-----------------*/
+/*----------------- Active links -----------------*/
 .nav-items li a {
   color: #F3EAEA;
   font-size: 20px;
@@ -71,13 +71,13 @@ nav ul{
   transition: 600ms;
 }
 
-/*-----------------Hover function-----------------*/
+/*----------------- Hover function -----------------*/
 .nav-items li a:hover {
   transform: translateY(-5px);
 }
 
 
-/*-----------------Disabled links-----------------*/
+/*----------------- Disabled links! -----------------*/
 .nav-items li b {
   color: #1a1616;
   font-size: 20px;
@@ -87,9 +87,9 @@ nav ul{
   display: inline-block;
 }
 
-/*----------------------------------------Main container----------------------------------------*/
+/*---------------------------------------- Main container ----------------------------------------*/
 
-/*-----------------Main container without navigation-----------------*/
+/*----------------- Main container without navigation -----------------*/
 .main_container {
   height: calc(110vh - 70px);
   display: flex;
@@ -103,7 +103,7 @@ main {
 }
 
 
-/*-----------------Regel-Box-----------------*/
+/*----------------- Regel-Box -----------------*/
 .regel_box {
   position: absolute;
   width: 1502px;
@@ -115,7 +115,7 @@ main {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/*-----------------Regel-Box: headings-----------------*/
+/*----------------- Regel-Box: headings -----------------*/
 .regel_box h2 {
   font-size: 30px;
 }
@@ -133,10 +133,10 @@ h1 {
 
 #h2_2 {
   text-align: right;
-  transform: translate(-230px,-205px);
+  transform: translate(-230px,-250px);
 } 
 
-/*-----------------Regel-Box: main font-----------------*/
+/*----------------- Regel-Box: main font -----------------*/
 .regel_box p {
   padding: 10px;
   font-size: 25px;
@@ -149,13 +149,13 @@ h1 {
 
 
 
-/*-----------------Regel-Box: left side, ----------------*/
+/*----------------- Regel-Box: left side -----------------*/
 .ausdruck_container {
   position: absolute;
   background-color: #FDFCFC;
   border-radius: 15px;
   right: 0px;
-  transform: translate(-50px,-150px);
+  transform: translate(-50px,-200px);
   width: 650px;
   height: 100px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -169,7 +169,7 @@ h1 {
 #generiere_ausdruck {
   position: absolute;
   right: 0px;
-  transform: translate(-300px,-70px);
+  transform: translate(-200px,-70px);
   font-size: 35px;
   font-weight: bolder;
 }
@@ -180,7 +180,7 @@ h1 {
   background-color: #FDFCFC;
   border-radius: 15px;
   right: 0px;
-  transform: translate(-50px,-20px);
+  transform: translate(-50px,-60px);
   width: 650px;
   height: 250px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -190,16 +190,11 @@ h1 {
   position: absolute;
   right: 0px;
   font-weight: bolder;
-  transform: translate(-230px,-5px);
-  font-size: 25px;
+  transform: translate(0px,-5px);
+  font-size: 22px;
 }
 
-#step {
-    text-align: right;
-    transform: translate(-310px,-180px);
-    font-size: 25px;
-  }
-
+/*----------------- Regel-Box: right side -----------------*/
 
 .vokabular {
   position: absolute;
@@ -215,6 +210,7 @@ h1 {
 }
 
 
+/*------------------------- Buttons ----------------------*/
 button {
   position: relative;
   border-radius: 25px;
@@ -223,10 +219,11 @@ button {
   margin-top: 40px;
 }
 
+
 .button_container {
   position: absolute;
   right: 0px;
-  transform: translate(-270px,220px);
+  transform: translate(-270px,180px);
 }
 
 
@@ -253,7 +250,7 @@ button {
 .button_org {
     position: absolute;
     right: 0px;
-    transform: translate(-510px, 150px);
+    transform: translate(-510px, 110px);
 }
 
 
@@ -285,13 +282,20 @@ button {
   font-weight: bold;
 }
 
-
 .slider_box {
   position: absolute;
   right: 0px;
-  transform: translate(-140px,400px);
+  transform: translate(-140px,350px);
 }
 
 .slider_box #slider {
   width: 250px;
 }
+
+
+/*----------------- Text Dokumentation -----------------*/
+
+#alert_text {
+  display: none;
+}
+
