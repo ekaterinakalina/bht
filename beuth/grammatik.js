@@ -1,34 +1,44 @@
-//Konstrukotren
+
+    //Konstrukotren
    
    var time = 600;        //Zeit-Variable ist mit Slider einstellbar
    var grammatik_richtig = 
-   ["1", //"2", "3", "4", "5", "6", "7", "8", "9", "0", 
-    "(1)",// "(2)", "(3)", "(4)", "(5)", "(6)", "(7)", "(8)", "(9)", "(0)",
+   ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
+    "(1)", "(2)", "(3)", "(4)", "(5)", "(6)", "(7)", "(8)", "(9)", "(0)",
    //"3+6", "2*6", "9/1", "3*5", "6-2", "8+7", "3*9", "5-2", "6/3", "1+7",
    //"(4/2)", "(8+0)", "(2+4)", "(9/1)", "(3*3)", "(7*5)", "(7-6)", "(4-3)", "(4*7)", "(2+1)",
    //"(9+1)-2", "(4+8)*3", "(8/2)+2", "(5+5)/2", "(2-1)*8", "(5+6)-4", "(9+7)-3", "(5+8)/1", "(0+6)-4", "(3+6)+9",
    //"3+(3*6)", "1*(6/2)", "5+(7+1)", "4*(2-9)", "5-(2+1)", "1/(2+3)", "3-(7+3)", "9-(2+8)", "8+(2+2)", "0+(6+4)",
     ];                    //richtige Ausdrucke
     var ausgabe_richtig   //Variable für Funktion ausdruck_richtig 
-   
-
-
-   /**
-    * Funktion für Ausgabe von richtigen Ausdrucken. 
-    * Richtige Ausdrucke werden zufällig ausgegeben.
-    */
-    function ausdruck_richtig() {
-    ausgabe_richtig = grammatik_richtig[Math.floor(Math.random()*grammatik_richtig.length)]; //zufällig 
-    document.getElementById("generiere_ausdruck").innerHTML = ausgabe_richtig;
     
     
+     /**
+     * Funktion für Ausgabe von richtigen Ausdrucken. 
+     * Richtige Ausdrucke werden zufällig ausgegeben.
+     */
+    
+     function ausdruck_richtig() {
+     ausgabe_richtig = grammatik_richtig[Math.floor(Math.random()*grammatik_richtig.length)]; //zufällig 
+     document.getElementById("generiere_ausdruck").innerHTML = ausgabe_richtig;
+
+      $("#generiere_ausdruck").on("click", function(){
+        return ausdruck_richtig();
+      });
 
         switch (ausgabe_richtig) {
+        case "0":
         case "1":
-            document.getElementById("produktionsschritte").innerText = "A =1a=> Z =3=> z";
-            $(function beispiel1(){    
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
 
-                $("#start").on("click", function(){
+            document.getElementById("produktionsschritte").innerText = "A =1a=> Z =3=> z";  
                     $("#A").animate({fontSize: "35px"}).css("color", "#8BCDAB");
                 setTimeout(function(){                                                   
                     $("#A").animate({fontSize: "25px"});                                 
@@ -44,23 +54,29 @@
                     }, time);
                 setTimeout(function(){
                     $("#Z").animate({fontSize: "25px"});
-                    }, time);                                                                  
-                 });
+                    }, time);     
+                    
+                    
                  $("#stop").click(function(){                                                 
                     $("span").stop(true, true); 
                 });
-            }); 
         break;
     
         
-        case "(1)":
-         document.getElementById("produktionsschritte").innerText = "A =1c=> (A) =1a=> Z =3=> z";
-         $(function beispiel2(){    
-            $("#start").on("click", function(){
-
+         case "(0)":
+         case "(1)":
+         case "(2)":
+         case "(3)":
+         case "(4)":
+         case "(5)":
+         case "(6)":
+         case "(7)":
+         case "(8)":
+         case "(9)":
+         document.getElementById("produktionsschritte").innerText = "A =1c=> (A) =1a=> Z =3=> z"; 
               $("#A").animate({fontSize: "35px"}).css("color", "#8BCDAB");
                setTimeout(function(){                                  // Methode
-                             $("#A").animate({fontSize: "25px"});     // Methode animiert jeweilige Regelelemente:
+                             $("#A").animate({fontSize: "25px"});      // Methode animiert jeweilige Regelelemente:
                              }, time);
                         setTimeout(function(){
                              $("#A2").animate({fontSize: "35px"}).css("color", "#8BCDAB");
@@ -79,15 +95,17 @@
                              }, time);
                         setTimeout(function(){
                             $("#Z").animate({fontSize: "25px"});
-                            }, time);                              
-                         });
+                            }, time);  
+                            
+                            
                     $("#stop").click(function(){                                  
                         $("span").stop(true, true);  
-                    }); 
-                });
-        break;   
+                    });
+            break;   
         }
     }
+
+
  
 
         /**
