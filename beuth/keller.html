@@ -1,52 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-       <!-- Meta, Title -->
-<head>
+    
+ <!------------------------------------ Meta, Title, Links ------------------------------------------------------------------>
+<head>!
+     <!-- Required meta tags -->
     <meta charset= "UTF-8">
-    <meta name= "viewport" content= "width=device-width, initial scale=1.0">
+    <meta name= "viewport" content= "width=device-width, initial scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel ="stylesheet" href="keller.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--jQuery Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
+    <!--Sweetalert JS Framework-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
+     <!--JavaScript file-->             
+    <script src=keller.js></script>       
+     <!--CSS file-->                                                    
+    <link rel ="stylesheet" href="keller.css">                                                
     <title>Kellerautomat</title>
 
 </head>
 <body>
 
-       <!-- Navigation -->
+    
+ <!------------------------------------  Navigation -------------------------------------------------------------------------->   
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
-                <div class="logo"><a href="index.html">
+                <div class="logo"><a href="index.html">          <!--Logo-->
                     THEORETISCHE INFORMATIK
                 </a>
                 </div>
 
-                <ul class="nav-items">
+                <ul class="nav justify-content-end">                         <!--Links in der Navbar-->
                     <li>
-                        <a href="about.html">About</a>
+                        <a a class="nav-item nav-link" href="about.html">About</a>
                     </li>
 
                     <li>
-                        <a href="dea.html">DEA</a>
+                        <a a class="nav-item nav-link" href="dea.html">DEA</a>
                     </li>
 
                     <li>
-                        <b href="grammatik.html">Grammatik</b>
+                        <a class="nav-item nav-link"  href="grammatik.html">Grammatik</a>
                     </li>
 
                     <li>
-                        <b href="keller.html">Kellerautomat</b>
+                        <a class="nav-item nav-link active" href="keller.html">Kellerautomat</a>
                     </li>
 
                     <li>
-                        <b href="tm.html">TM</b>
+                        <a a class="nav-item nav-link disabled" href="tm.html">TM</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
-    
-    
-       <!-- Container Header/Main -->
+
+<!------------------------------------  Main-Container ------------------------------------------------------------------------>  
+<div class="main_container">
+    <main>
+        <h1>KELLERAUTOMAT</h1>                                      <!--Headline-->                  
+
+<!------------------------------------  Regel-Box: linke Seite, Vokabular ------------------------------------------------------>
+        <div class="keller_feld">                                                               <!--Subheadline-->   
+            <p><strong>Vokabular: K = {Q; Σ; Г; δ; S; F}</strong></p>
+            <p><stong>w</stong> = {w ϵ Σ | w ist ein legaler arithmetischer Ausdruck}</p>
+            <p>Zustände <strong>Q</strong> = {q0; q1; q2; q3}</p>
+            <p>Input <strong>Σ</strong> = {int 0-9; +; - ; * ; /; (; )}</p>
+            <p>Keller <strong>Г </strong> = {$}</p>
+            <p>Startzustand <strong>S</strong> = {q0}</p>
+            <p>Endzustand <strong>F</strong> = {q3}</p>
+
+            <div class="graph">
+                <div id="kreis_q0">q0</div>
+                <div id="kreis_q1">q1</div>
+                <div id="kreis_q2">q2</div>
+                <div id="kreis_q3">q3</div>
+
+                <p id="kante1">ε, ε --> $ </p>
+                <p id="kante2">(, ε --> ε </p>
+                <p id="kante3">int 0-9, ε --> ε </p>
+                <p id="kante4">), ( --> ε </p>
+                <p id="kante5">ε, $ --> ε </p>
+                <div id="kante6">
+                    <p>+, ε --> ε</p>
+                    <p>-, ε --> ε</p>
+                    <p>*, ε --> ε</p>
+                    <p>/, ε --> ε</p>
+                </div>
+
+                <img id="arrow1" src="images/keller/arrow1.svg">
+                <img id="arrow2"src="images/keller/arrow2.svg">
+                <img id="arrow3"src="images/keller/arrow3.svg">
+                <img id="arrow4"src="images/keller/arrow4.svg">
+                <img id="arrow5" src="images/keller/arrow1.svg">
+                <img id="arrow6"src="images/keller/arrow6.svg">
+            </div>
+        </div>
+
+            <table class="keller_tabelle">
+                <tr>
+                    <th class="table_letter">δ:Q</th>
+                    <th class="table_letter">Σe</th>
+                    <th class="table_letter">Γe</th>
+                    <th class="table_letter">P(Q × Γe)</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q0</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">{(q1, $)}</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q1</th>
+                    <th class="table_letter">(</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">{(q1, (, )}</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q1</th>
+                    <th class="table_letter">int 0-9</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">{(q2, ε)}</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q2</th>
+                    <th class="table_letter">)</th>
+                    <th class="table_letter">(</th>
+                    <th class="table_letter">{(q2, ε)}</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q2</th>
+                    <th class="table_letter">+;-;*;/</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">{(q1, ε)}</th>
+                </tr>
+
+                <tr>
+                    <th class="table_letter">q2</th>
+                    <th class="table_letter">ε</th>
+                    <th class="table_letter">$</th>
+                    <th class="table_letter">{(q3, ε)}</th>
+                </tr>
+            </table>
+
+            <div class="button_container">
+
+                <input type="text", class="input">  
+
+                <button>play</button>
+                <button>richtiger Ausdruck</button>
+                <button>falscher Ausdruck</button>
+                <button>check</button>
+                <button>Tech-Stack</button>
+
+                <div class="check">
+                    <p id="check_text"></p>
+                </div>
+
+                <div class="slider_box">
+                    <input id="slider" type="range" max="2000" min="0" value="1000" step="200"> 
+                </div> 
+            </div>
+        </div>
+
+                
+<!------------------------------------  Dokumentation ------------------------------------------------------------------------------->  
+
 
 </body>
 </html>

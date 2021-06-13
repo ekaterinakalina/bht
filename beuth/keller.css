@@ -1,25 +1,35 @@
 *{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
 }
+
 
 body {
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
+  background: #E2DDDD;
+  color: #443B3B;
 }
 
-/* Navigation */
+/*---------------------------------------- Navigation ----------------------------------------*/
+
+/*----------------- Navigation bar -----------------*/
 .nav-container {
   background: #5D4954;
   height: 70px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
+
+/*----------------- Wrapper -----------------*/
 .wrapper {
   width: 1200px;
   margin: 0 auto;
 }
 
+/*----------------- Links styling -----------------*/
 .wrapper a {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -31,16 +41,29 @@ body {
 }
 
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between; 
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; 
   height: 72px;
 }
 
-nav ul{
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .nav-items li {
@@ -51,28 +74,204 @@ nav ul{
 .nav-items li:nth-last-of-type(1) {
   margin: 0;
 }
+
+/*----------------- Active links -----------------*/
 .nav-items li a {
   color: #F3EAEA;
-  font-size: 20px;
+  font-size: 23px;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   display: inline-block;
+  -webkit-transition: 600ms;
+  -o-transition: 600ms;
   transition: 600ms;
 }
 
+/*----------------- Hover function -----------------*/
 .nav-items li a:hover {
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 
-.nav-items li b {
-  color: #1a1616;
-  font-size: 20px;
-  font-family: "Poppins", sans-serif;
-  font-weight: lighter;
-  text-decoration: none;
-  display: inline-block;
+/*---------------------------------------- Main container ----------------------------------------*/
+.main_container {
+  background: #E2DDDD;
+  height: calc(1200px - 70px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
 }
 
 
-/* Kellerautomat */
+h1 {
+  position: absolute;
+  letter-spacing: 0.2em;
+  border: 1px solid #443B3B;
+  font-weight: normal;
+  font-size: 35px;
+  top: +130px;
+  left: +850px;
+  align-self: center;
+}
+
+
+.keller_feld {
+  position: absolute;
+  width: 1815px;
+  height: 300px;
+  background: #FDFCFC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 64px;
+  left: +150px;
+  bottom: +350px;
+}
+
+.keller_feld p {
+  position:relative;
+  font-size: smaller;
+  font-weight: bolder;
+  top: +30px;
+  right: -100px;
+}
+
+
+
+#kreis_q0 {
+  position: absolute;
+  width: 83px;
+  height: 81px;
+  background: #443B3B;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FDFCFC;
+  font-size: 45px;
+  text-align-last: center;
+  right: +1240px;
+  top: +120px;
+}
+
+
+#kreis_q1 {
+  position: absolute;
+  width: 83px;
+  height: 81px;
+  background: #443B3B;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FDFCFC;
+  font-size: 45px;
+  text-align-last: center;
+  right: +900px;
+  top: +120px;
+}
+
+#kreis_q2 {
+  position: absolute;
+  width: 83px;
+  height: 81px;
+  background: #443B3B;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FDFCFC;
+  text-align-last: center;
+  font-size: 45px;
+  right: +460px;
+  top: +120px;
+}
+
+#kreis_q3 {
+  position: absolute;
+  width: 83px;
+  height: 81px;
+  background: #443B3B;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FDFCFC;
+  font-size: 45px;
+  text-align-last: center;
+  right: +120px;
+  top: +120px;
+}
+
+#kante1 {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: +600px;
+
+}
+
+#kante2 {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 0px;
+}
+
+#kante3 {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 0px;
+}
+
+#kante4 {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 0px;
+}
+
+#kante5 {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 0px;
+}
+
+#kante6  {
+  position:absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  left: 0px;
+}
+
+#arrow1 {
+  position: relative;
+  width: 15%;
+  transform: translate(565px,-140px);
+}
+
+#arrow2 {
+  transform: translate(580px,-170px);
+}
+
+#arrow3{
+  width: 20%;
+  transform: translate(550px,-140px);
+}
+
+#arrow4 {
+  transform: translate(560px,-170px);
+}
+
+#arrow5 {
+  width: 15%;
+  transform: translate(520px,-140px);
+}
+
+#arrow6 {
+  width: 21%;
+  transform: translate(-200px,-100px);
+}
+
+
+
+
+
+
+
+
