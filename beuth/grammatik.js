@@ -1,5 +1,5 @@
 
-  //----------------------------------------- Konstruktoren ---------------------------------------------------//
+  //----------------------------------------- Variablen ---------------------------------------------------//
    
 var time = 1500;           //Zeit-Variable ist mit Slider einstellbar
 var grammatik_richtig =    //alle mögliche richtige Ausdruke
@@ -679,9 +679,6 @@ var ausgabe_falsch        //switch-Variable falsch, Funktion ausdruck_falsch()
                                      time = $(this).val();
                                  });
                   break
-
-
-
             }
   }
 

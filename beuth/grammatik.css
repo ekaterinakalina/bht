@@ -17,7 +17,6 @@ body {
 .nav-container {
   background: #5D4954;
   height: 70px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
 
@@ -50,6 +49,7 @@ nav ul{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transform: translate(5px,5px)
 }
 
 .nav-items li {
@@ -80,24 +80,27 @@ nav ul{
 /*----------------- Disabled links! -----------------*/
 .nav-items li b {
   color: #1a1616;
-  font-size: 20px;
+  font-size: 23px;
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
   text-decoration: none;
   display: inline-block;
 }
 
-/*---------------------------------------- Main container ----------------------------------------*/
 
-/*----------------- Main container without navigation -----------------*/
+/*---------------------------------------- Main container ----------------------------------------*/
 .main_container {
+  position: fixed;
+  background: #E2DDDD;
   height: calc(110vh - 70px);
   display: flex;
   align-items: center;
-}
+  }
+
 
 main {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -109,7 +112,7 @@ main {
   width: 1502px;
   height: 755px;
   left: 200px;
-  top: 200px;
+  top: 150px;
   background: linear-gradient(90deg, #FDFCFC 50%, #C4C4C4 50%);
   border-radius: 64px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -121,9 +124,15 @@ main {
 }
 
 h1 {
-  position:absolute;
-  font-size: 50px;
-  transform: translate(670px, -400px);
+  position: fixed;
+  letter-spacing: 0.2em;
+  border: 1px solid #443B3B;
+  font-weight: normal;
+  font-size: 40px;
+  top: +130px;
+  left: +670px;
+  justify-content: center;
+  align-content: center;
 }
 
 #h2_1 {

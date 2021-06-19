@@ -1,27 +1,32 @@
-
-/* Body */
 *{
   box-sizing: border-box;
   margin: 0;
 }
 
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: lighter;
+  background: #E2DDDD;
+  color: #443B3B;
 }
 
-/* Navigation */
+/*---------------------------------------- Navigation ----------------------------------------*/
+
+/*----------------- Navigation bar -----------------*/
 .nav-container {
   background: #5D4954;
   height: 70px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
+
+/*----------------- Wrapper -----------------*/
 .wrapper {
   width: 1200px;
   margin: 0 auto;
 }
 
+/*----------------- Links styling -----------------*/
 .wrapper a {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -39,10 +44,12 @@ nav {
   height: 72px;
 }
 
+
 nav ul{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transform: translate(5px,5px)
 }
 
 .nav-items li {
@@ -53,6 +60,8 @@ nav ul{
 .nav-items li:nth-last-of-type(1) {
   margin: 0;
 }
+
+/*----------------- Active links -----------------*/
 .nav-items li a {
   color: #F3EAEA;
   font-size: 23px;
@@ -62,11 +71,13 @@ nav ul{
   transition: 600ms;
 }
 
+/*----------------- Hover function -----------------*/
 .nav-items li a:hover {
   transform: translateY(-5px);
 }
 
 
+/*----------------- Disabled links! -----------------*/
 .nav-items li b {
   color: #1a1616;
   font-size: 23px;
@@ -74,6 +85,24 @@ nav ul{
   font-weight: lighter;
   text-decoration: none;
   display: inline-block;
+}
+
+
+/*---------------------------------------- Main container ----------------------------------------*/
+.main_container {
+  position: fixed;
+  background: #E2DDDD;
+  height: calc(110vh - 70px);
+  display: flex;
+  align-items: center;
+  }
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 

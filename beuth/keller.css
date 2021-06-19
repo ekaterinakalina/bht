@@ -1,6 +1,5 @@
 *{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -18,8 +17,6 @@ body {
 .nav-container {
   background: #5D4954;
   height: 70px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 } 
 
 
@@ -34,36 +31,25 @@ body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 25px;
+  font-size: 30px;
   color: #F3EAEA;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-decoration: none;
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; 
+  align-items: center;
+  justify-content: space-between; 
   height: 72px;
 }
 
 
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
+nav ul{
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate(5px,10px)
 }
 
 .nav-items li {
@@ -82,46 +68,55 @@ nav {
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   display: inline-block;
-  -webkit-transition: 600ms;
-  -o-transition: 600ms;
   transition: 600ms;
 }
 
 /*----------------- Hover function -----------------*/
 .nav-items li a:hover {
-  -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-          transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+
+/*----------------- Disabled links! -----------------*/
+.nav-items li b {
+  color: #1a1616;
+  font-size: 23px;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  display: inline-block;
 }
 
 
 /*---------------------------------------- Main container ----------------------------------------*/
 .main_container {
-  position: fixed;
+  position: fixed; 
   background: #E2DDDD;
-  height: calc(1200px - 70px);
+  height: calc(110vh - 70px);
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-around;
-}
+  align-items: center;
+  justify-content: space-between;
+  }
 
 
+/*-Headings--*/
 h1 {
-  position: fixed;
+  position: absolute;
   letter-spacing: 0.2em;
   border: 1px solid #443B3B;
   font-weight: normal;
   font-size: 35px;
-  top: +150px;
-  left: +850px;
+  top: +50px;
+  left: +760px;
   justify-content: center;
   align-content: center;
 }
 
 
 .keller_feld {
-  position: absolute;
+  position: fixed;
   width: 1815px;
   height: 300px;
   background: #FDFCFC;
@@ -129,21 +124,20 @@ h1 {
   border-radius: 64px;
   justify-content: center;
   align-content: center;
-  left: +135px;
-  top: +150px;
+  left: +40px;
+  top: +200px;
 }
 
 .keller_feld p {
   position:relative;
-  font-size: normal;
+  font-size: 20px;
   font-weight: bolder;
   top: +30px;
   right: -100px;
 }
 
 
-
-#kreis_q0 {
+#node_q0 {
   position: absolute;
   width: 83px;
   height: 81px;
@@ -151,7 +145,7 @@ h1 {
   border-radius: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
-  font-size: 45px;
+  font-size: 40px;
   text-align-last: center;
   right: +1240px;
   top: +120px;
@@ -159,7 +153,7 @@ h1 {
 }
 
 
-#kreis_q1 {
+#node_q1 {
   position: absolute;
   width: 83px;
   height: 81px;
@@ -167,14 +161,14 @@ h1 {
   border-radius: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
-  font-size: 45px;
+  font-size: 40px;
   text-align-last: center;
   right: +900px;
   top: +120px;
    flex-basis: auto;
 }
 
-#kreis_q2 {
+#node_q2 {
   position: absolute;
   width: 83px;
   height: 81px;
@@ -183,12 +177,12 @@ h1 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
   text-align-last: center;
-  font-size: 45px;
+  font-size: 40px;
   right: +460px;
   top: +120px;
 }
 
-#kreis_q3 {
+#node_q3 {
   position: absolute;
   width: 83px;
   height: 81px;
@@ -196,13 +190,37 @@ h1 {
   border-radius: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
-  font-size: 45px;
+  font-size: 40px;
   text-align-last: center;
   right: +120px;
   top: +120px;
 }
 
-#kante1 {
+.keller_unten {
+  position: absolute;
+  bottom: 300px;
+  flex-wrap: wrap;
+}
+
+#keller_tabelle {
+  position: absolute;
+  background-color: #A59C9C;
+  color: #443B3B;
+  left: 550px;
+  bottom: -185px;
+  font-size: 20px;
+  font-weight: lighter;
+  width: 400px;
+  height: 350px;
+}
+
+#table_top {
+  background-color: #443B3B;
+  color: #FDFCFC;
+  font-weight: lighter;
+}
+
+#edge1 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
@@ -211,7 +229,7 @@ h1 {
 
 }
 
-#kante2 {
+#edge2 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
@@ -219,7 +237,7 @@ h1 {
   top: 50px;
 }
 
-#kante3 {
+#edge3 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
@@ -227,7 +245,7 @@ h1 {
   top: 110px;
 }
 
-#kante4 {
+#edge4 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
@@ -235,7 +253,7 @@ h1 {
   top: 50px;
 }
 
-#kante5 {
+#edge5 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
@@ -243,14 +261,18 @@ h1 {
   top: 110px;
 }
 
-#kante6  {
+#edge6  {
   position:absolute;
   font-weight: lighter;
-  font-size: 25px;
   letter-spacing: 1px;
-  left: +880px;
+  left: +895px;
   top: 160px;
 }
+
+#edge6 p {
+  font-size: 25px;
+}
+
 
 #arrow1 {
   position: relative;
@@ -277,33 +299,64 @@ h1 {
 }
 
 #arrow6 {
-  width: 21%;
-  transform: translate(-198px,-130px);
+  width: 20%;
+  transform: translate(-193px,-130px);
 }
 
-#play {
-  background-color:  #2796A8;
-  border-color: #2796A8;
-  font-weight: bold;
+
+.button_container button{
+  transform: translate(1050px,150px);
+  flex-wrap: wrap;
   font-size: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#keller_tabelle {
-  position: absolute;
-  background-color: #C4C4C4;
-  color: #443B3B;
-  left: 230px;
-  font-size: 30px;
-  font-weight: lighter;
+#ausdruck_container {
+  transform: translate(1050px,150px);
+  width: 450px;
+  height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#table_top {
-  background-color: #443B3B;
-  color: #FDFCFC;
-  font-weight: lighter;
+#state_container {
+  transform: translate(1050px,155px);
+  width: 450px;
+  height: 80px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+#play_richtig {
+  background-color: #8BCDAB;
+  border-color: #8BCDAB;
+  font-weight: bold;
+}
+
+#play_falsch {
+  background-color: #F58A8A;
+  border-color: #F58A8A;
+  font-weight: bold;
+}
+
+.slider_box {
+  transform: translate(1300px,130px);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #5D4954;
+    color: white;
+    text-align: center;
+}
+
+#alert_text {
+  display:none;
+}
+
+
+
 
 
 

@@ -2,24 +2,24 @@
 <html lang="en">
     
  <!------------------------------------ Meta, Title, Links ------------------------------------------------------------------>
-<head>!
+<head>
      <!-- Required meta tags -->
     <meta charset= "UTF-8">
     <meta name= "viewport" content= "width=device-width, initial scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    <!--jQuery Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>   
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--jQuery Library-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   
     <!--Sweetalert JS Framework-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
-     <!--JavaScript file-->             
-    <script src=keller.js></script>       
+     <!--JavaScript file-->          
+     <script src="keller_richtig.js"></script>
+     <script src="keller_falsch.js"></script>      
      <!--CSS file-->                                                    
     <link rel ="stylesheet" href="keller.css">                                                
     <title>Kellerautomat</title>
-
 </head>
 <body>
 
@@ -28,35 +28,38 @@
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
-                <div class="logo"><a href="index.html">          <!--Logo-->
+                 <!--Logo-->
+                <div class="logo"><a href="index.html">         
                     THEORETISCHE INFORMATIK
                 </a>
                 </div>
-
-                <ul class="nav justify-content-end">                         <!--Links in der Navbar-->
+                <!--Links in der Navbar-->
+                <ul class="nav-items">                           
                     <li>
-                        <a a class="nav-item nav-link" href="about.html">About</a>
+                        <a href="about.html">About</a>
                     </li>
 
                     <li>
-                        <a a class="nav-item nav-link" href="dea.html">DEA</a>
+                        <a href="dea.html">DEA</a>
                     </li>
 
                     <li>
-                        <a class="nav-item nav-link"  href="grammatik.html">Grammatik</a>
+                        <a href="grammatik.html">Grammatik</a>
                     </li>
 
                     <li>
-                        <a class="nav-item nav-link active" href="keller.html">Kellerautomat</a>
+                        <a href="keller.html">Kellerautomat</a>
                     </li>
 
                     <li>
-                        <a a class="nav-item nav-link disabled" href="tm.html">TM</a>
+                        <b href="tm.html">TM</b>
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
+
+   
 
 <!------------------------------------  Main-Container ------------------------------------------------------------------------>  
 <div class="main_container">
@@ -64,9 +67,9 @@
         <h1>KELLERAUTOMAT</h1>                                      <!--Headline-->                  
 
 <!------------------------------------  Regel-Box: linke Seite, Vokabular ------------------------------------------------------>
-        <div class="keller_feld">                                                               <!--Subheadline-->   
+        <section class="keller_feld">  
+             <!--Subheadline-->                                                               
             <p><strong>Vokabular: K = {Q; Σ; Г; δ; S; F}</strong></p>
-            <p><stong>w</stong> = {w ϵ Σ | w ist ein legaler arithmetischer Ausdruck}</p>
             <p>Zustände <strong>Q</strong> = {q0; q1; q2; q3}</p>
             <p>Input <strong>Σ</strong> = {int 0-9; +; - ; * ; /; (; )}</p>
             <p>Keller <strong>Г </strong> = {$}</p>
@@ -74,17 +77,17 @@
             <p>Endzustand <strong>F</strong> = {q3}</p>
 
             <div class="graph">
-                <div id="kreis_q0">q0</div>
-                <div id="kreis_q1">q1</div>
-                <div id="kreis_q2">q2</div>
-                <div id="kreis_q3">q3</div>
+                <div id="node_q0">q0</div>
+                <div id="node_q1">q1</div>
+                <div id="node_q2">q2</div>
+                <div id="node_q3">q3</div>
 
-                <p id="kante1">ε, ε --> $ </p>
-                <p id="kante2">(, ε --> ε </p>
-                <p id="kante3">int 0-9, ε --> ε </p>
-                <p id="kante4">), ( --> ε </p>
-                <p id="kante5">ε, $ --> ε </p>
-                <div id="kante6">
+                <p id="edge1">ε, ε --> $ </p>
+                <p id="edge2">(, ε --> ( </p>
+                <p id="edge3">int 0-9, ε --> ε </p>
+                <p id="edge4">), ( --> ε </p>
+                <p id="edge5">ε, $ --> ε </p>
+                <div id="edge6">
                     <p><strong>+</strong>, ε --> ε; <strong>-</strong>, ε --> ε</p>
                     <p><strong>*</strong>, ε --> ε; <strong>/</strong>, ε --> ε</p>
                 </div>
@@ -96,82 +99,134 @@
                 <img id="arrow5" src="images/keller/arrow1.svg">
                 <img id="arrow6"src="images/keller/arrow6.svg">
             </div>
-        </div>
+        </section>
 
-            <table class="table table-dark table-hover" id="keller_tabelle">
-                <tr>
-                    <th id="table_top" class="table_letter">δ:Q</th>
-                    <th id="table_top" class="table_letter">Σe</th>
-                    <th id="table_top" class="table_letter">Γe</th>
-                    <th id="table_top" class="table_letter">P(Q × Γe)</th>
-                </tr>
+    <section class="keller_unten">
+        <table class="table table-dark table-hover table-sm" id="keller_tabelle">
+          <thead>
+            <tr>
+                <th id="table_top" class="table_letter">δ:Q</th>
+                <th id="table_top" class="table_letter">Σe</th>
+                <th id="table_top" class="table_letter">Γe</th>
+                <th id="table_top" class="table_letter">P(Q × Γe)</th>
+            </tr>
+           </thead>
 
-                <tr>
-                    <th class="table_letter">q0</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">{(q1, $)}</th>
-                </tr>
+          <tbody id="tBody">
+            <tr id="q0_ε_ε">
+                <th class="table_letter">q0</th>
+                <th class="table_letter">ε</th>
+                <th class="table_letter">ε</th>
+                <th class="table_letter">{(q1, $)}</th>
+            </tr>
 
-                <tr>
-                    <th class="table_letter">q1</th>
-                    <th class="table_letter">(</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">{(q1, (, )}</th>
-                </tr>
+            <tr id="q1_klammer_ε">
+                <th class="table_letter">q1</th>
+                 <th class="table_letter">(</th>
+                 <th class="table_letter">ε</th>
+                 <th class="table_letter">{(q1, (, )}</th>
+            </tr>
 
-                <tr>
-                    <th class="table_letter">q1</th>
-                    <th class="table_letter">int 0-9</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">{(q2, ε)}</th>
-                </tr>
+            <tr id="q1_int_ε">
+                 <th class="table_letter">q1</th>
+                 <th class="table_letter">int 0-9</th>
+                 <th class="table_letter">ε</th>
+                 <th class="table_letter">{(q2, ε)}</th>
+            </tr>
 
-                <tr>
-                    <th class="table_letter">q2</th>
-                    <th class="table_letter">)</th>
-                    <th class="table_letter">(</th>
-                    <th class="table_letter">{(q2, ε)}</th>
-                </tr>
+            <tr id="q2_klammer_zu">
+                 <th class="table_letter">q2</th>
+                 <th class="table_letter">)</th>
+                 <th class="table_letter">(</th>
+                 <th class="table_letter">{(q2, ε)}</th>
+            </tr>
 
-                <tr>
-                    <th class="table_letter">q2</th>
-                    <th class="table_letter">+;-;*;/</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">{(q1, ε)}</th>
-                </tr>
+            <tr id="q2_o_ε">
+                <th class="table_letter">q2</th>
+                <th class="table_letter">+;-;*;/</th>
+                <th class="table_letter">ε</th>
+                <th class="table_letter">{(q1, ε)}</th>
+            </tr>
 
-                <tr>
-                    <th class="table_letter">q2</th>
-                    <th class="table_letter">ε</th>
-                    <th class="table_letter">$</th>
-                    <th class="table_letter">{(q3, ε)}</th>
-                </tr>
-            </table>
+            <tr id="keller_end">
+                <th class="table_letter">q2</th>
+                <th class="table_letter">ε</th>
+                <th class="table_letter">$</th>
+                <th class="table_letter">{(q3, ε)}</th>
+            </tr>
+          </tbody>
+        </table>
 
-            <div class="button_container">
 
-                <input type="text", class="input">  
-
-                <button id="play" type="button" class="btn btn-light btn-block"> play</button>
-                <button id="richtig">richtiger Ausdruck</button>
-                <button id="falsch">falscher Ausdruck</button>
-                <button id="check_expression">check</button>
-                <button id="tech">Tech-Stack</button>
-
-                <div class="check">
-                    <p id="check_text"></p>
-                </div>
-
-                <div class="slider_box">
-                    <input id="slider" type="range" max="2000" min="0" value="1000" step="200"> 
-                </div> 
+        <div class="button_container">
+            <div id="ausdruck_container", class="card">
+              <div class="card-body">
+              <span id="ausdruck_text"></span> 
+              </div>
             </div>
+
+            <div id="state_container" class="card">
+                <div class="card-body">
+                <p id="check_text"></p> 
+                </div>
+              </div>
+
+            <button id="play_richtig" type="button" class="btn btn-light btn-block mt-4">richtiger Ausdruck</button>
+            <button id="play_falsch" type="button" class="btn btn-light btn-block mt-4">falscher Ausdruck</button>
+            <button id="step" class="btn btn-secondary mt-3">step</button>
+            <button id="tech" class="btn btn-secondary mt-3" onclick="myAlert()">Tech-Stack</button>
+
+            <div class="slider_box">
+                 <input id="slider" type="range" max="3000" min="0" value="1500" step="200"> 
+            </div> 
         </div>
+    </section>
+    </main>
 
-                
+    <footer>
+        <p>Author: Ekaterina Kalina; Berliner Hochschule für Technik, SS21</p>
+    </footer>
+      
+      
 <!------------------------------------  Dokumentation ------------------------------------------------------------------------------->  
+ <div id="alert_text">   
+    <p>Diese kontextfreie Grammatik erzeugt zufällige richtige und falsche arithmetische Ausdrücke über einstelligen natürlichen Zahlen mit den Operanden
+    "+,-,*,/" und beliebig vielen Klammern().</p>
+    <p>   </p>
+    <p>**Vokabular:**</p>
 
+    <p>Grammatik: G = {V,Σ,R,S}</p>
+    <p>Terminalvariablen: Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}<p>
+    <p>Nichtterminalvariablen: V = {A,O,Z}; S={A}</p>  
+    <p>Regeln R:</p>
+    <p>1. A → (a)Z;  (b)AOA;  (c)(A) </p>  
+    <p>2. O → +| - | / | *</p> 
+    <p>3. Z →  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</p>  
+    <p>   </p>
 
-</body>
-</html>
+    <p>**Tech Stack**</p>
+    <p>   </p>
+    <p>*JavaScript*: die Web-Anwedung besteht aus zwei Hauptfunktionen ausdruck_richtig() und ausdruck_falsch(), 
+        die zufällige arithmetische Ausdrücke mit Hilfe der Methode "Math.floor(Math.random()" erzeugen. 
+        Die Struktur der Funktionen basiert sich auf "switch-case" Verzweigung. 
+    <p>   </p>
+        Kontrolle wird durch Buttons "Generiere einen richtigen/falschen Ausdruck", "Stop", "Slider" ermöglicht.
+        Die Hauptbuttons erzeugen einen richtigen/falschen Ausdruck und eine Reihe von Produktionsschritten.
+        Beide Ausgaben werden in separaten Feldern gezeigt. Gleichzeitig wird Animation der Regeln gestartet.
+    <p>   </p>
+    <p>*jQuery*: ist eine JS-Bibliothek und wird zur einfacheren Manipulation der HTML-Elemente benutzt.
+       Die Web-Anwedung ist automatisch animiert: die Reihenfolge der Regeln wird schrittweise angezeigt und
+       wird mit Farben und vergrößerter Schrift verdeutlicht. Die Hauptmethoden sind: ".animate()", ".css()".
+       Mit "setTimeout(function()" wird die Ausgabe zeitlich verzögert, dadurch wird schrittweises Abspielen
+       erreicht. Link: https://api.jquery.com
+    <p>   </p>
+    <p>*SweetAlert*: ein JS Framework, das als mehr interessanter Ersatz für "window.alert()"-Funktion dient und
+        das Lesen dieser Dokumentation ermöglicht! Link: https://sweetalert.js.org</p> 
+    <p>   </p>
+    <p>*HTML5*: Strukturierung von Inhalten</p> 
+    <p>   </p> 
+    <p>*CSS*: Gestaltung</p> 
+ </div>
+
+ </body>
+ </html>
