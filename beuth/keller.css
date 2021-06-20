@@ -207,11 +207,11 @@ h1 {
   background-color: #A59C9C;
   color: #443B3B;
   left: 550px;
-  bottom: -185px;
+  bottom: -150px;
   font-size: 20px;
   font-weight: lighter;
   width: 400px;
-  height: 350px;
+  height: 250px;
 }
 
 #table_top {
@@ -265,7 +265,7 @@ h1 {
   position:absolute;
   font-weight: lighter;
   letter-spacing: 1px;
-  left: +895px;
+  left: +915px;
   top: 160px;
 }
 
@@ -305,24 +305,34 @@ h1 {
 
 
 .button_container button{
-  transform: translate(1050px,150px);
+  transform: translate(1000px,190px);
   flex-wrap: wrap;
   font-size: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #ausdruck_container {
-  transform: translate(1050px,150px);
+  transform: translate(1000px,190px);
   width: 450px;
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+#ausdruck_text {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 #state_container {
-  transform: translate(1050px,155px);
+  transform: translate(1000px,200px);
   width: 450px;
   height: 80px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#state_container p {
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 #play_richtig {
@@ -337,8 +347,13 @@ h1 {
   font-weight: bold;
 }
 
+ #tech {
+  background-color: #7696CD;
+  border-color: #7696CD;
+ } 
+
 .slider_box {
-  transform: translate(1300px,130px);
+  transform: translate(1280px,170px);
 }
 
 footer {

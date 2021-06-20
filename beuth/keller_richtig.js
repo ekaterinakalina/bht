@@ -3,7 +3,7 @@ $(function () {
 
 //----------------------------------------- Variablen ---------------------------------------------------//
  var time = 1500;  //Zeit-Variable ist mit Slider einstellbar
- var keller_ausdrucke_richtig = 
+ var keller_ausdrucke_richtig =  //richtige Ausdrucke
  ["1", "2", "3", "4", "0", 
  "(5)", "(6)", "(7)", "(8)", "(9)", 
  "2*6", "8+7", "5-2", "9/3", 
@@ -12,44 +12,189 @@ $(function () {
  "(8)-3", "(2)*9"];
 
  //--------------------------------------- Button Events--------------------------------------------------//
-
+ //Button "richtiher Ausdruck" 
  $("#play_richtig").click(keller_richtig);
- $("#step").click();
  //Slider-Funktion lässt die Geschwindigkeit einstellen
  $("#slider").on("change",function(){                                          
- time = $(this).val();
+     time = $(this).val();
+ });
+ //Popover Funktion
+ $('[data-toggle="popover"]').popover({
+     placement : 'top',
+     trigger : 'hover'
  });
 
+
+ //--------------------------------------- Mouseenter/mouseleave Nodes-->Tabelle----------------------------//
+$("#node_q0").on({
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#q0_ε_ε").css("background", "#8BCDAB");
+        $("#edge1").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#443B3B");
+        $("#q0_ε_ε").css("background", "#A59C9C");
+        $("#edge1").css("color", "#443B3B");
+    }
+})
+
+$("#node_q1").on({
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#q1_klammer_ε, #q1_int_ε").css("background", "#8BCDAB");
+        $("#edge2, #edge3").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#443B3B");
+        $("#q1_klammer_ε, #q1_int_ε").css("background", "#A59C9C");
+        $("#edge2, #edge3").css("color", "#443B3B");
+    }
+})
+
+$("#node_q2").on({
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#q2_klammer_zu, #q2_o_ε").css("background", "#8BCDAB");
+        $("#edge4, #edge6").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#443B3B");
+        $("#q2_klammer_zu, #q2_o_ε").css("background", "#A59C9C");
+        $("#edge4, #edge6").css("color", "#443B3B");
+    }
+})
+
+$("#node_q3").on({
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#keller_end").css("background", "#8BCDAB");
+        $("#edge5").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#443B3B");
+        $("#keller_end").css("background", "#A59C9C");
+        $("#edge5").css("color", "#443B3B");
+    }
+})
+
+//--------------------------------------- Mouseenter/mouseleave Tabelle-->Nodes----------------------------//
+
+$("#q0_ε_ε").on({
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q0").css("background", "#8BCDAB");
+        $("#edge1").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q0").css("background", "#443B3B");
+        $("#edge1").css("color", "#443B3B");
+    }
+})
+
+$("#q1_klammer_ε").on({ 
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q1").css("background", "#8BCDAB");
+        $("#edge2").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q1").css("background", "#443B3B");
+        $("#edge2").css("color", "#443B3B");
+    }
+})
+
+$("#q1_int_ε").on({ 
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q1").css("background", "#8BCDAB");
+        $("#edge3").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q1").css("background", "#443B3B");
+        $("#edge3").css("color", "#443B3B");
+    }
+})
+
+$("#q2_klammer_zu").on({ 
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q2").css("background", "#8BCDAB");
+        $("#edge4").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q2").css("background", "#443B3B");
+        $("#edge4").css("color", "#443B3B");
+    }
+})
+
+$("#q2_o_ε").on({ 
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q2").css("background", "#8BCDAB");
+        $("#edge6").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q2").css("background", "#443B3B");
+        $("#edge6").css("color", "#443B3B");
+    }
+})
+
+$("#keller_end").on({ 
+    mouseenter: function(){
+        $(this).css("background", "#8BCDAB");
+        $("#node_q3").css("background", "#8BCDAB");
+        $("#edge5").css("color", "#8BCDAB");
+    },
+    mouseleave: function(){
+        $(this).css("background", "#A59C9C");
+        $("#node_q3").css("background", "#443B3B");
+        $("#edge5").css("color", "#443B3B");
+    }
+})
 
 
 //----------------------------------------- Richtige Ausdrucke -------------------------------------------------------//
 /**
 * Funktion für Ausgabe von richtigen Ausdrucken für den Kellerautomat. 
-* Richtige Ausdrucke werden zufällig ausgegeben und animiert.
+* Richtige Ausdrucke werden zufällig ausgegeben und farbig animiert.
 */
 function keller_richtig(){
     var keller_ausgabe_richtig = keller_ausdrucke_richtig[Math.floor(Math.random()*keller_ausdrucke_richtig.length)];
     document.getElementById("ausdruck_text").innerHTML = keller_ausgabe_richtig;
-
+  
     switch (keller_ausgabe_richtig) {
         case "0":
         case "1":
         case "2":
         case "3":
         case "4":
-            //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
 
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
+            //Start
             setTimeout(function(){
             $("#node_q0").css("background", "#8BCDAB");
             $("#edge1").css("color", "#8BCDAB");
             $("#q0_ε_ε").css("background","#8BCDAB");
             }, time);
+            // Int 0-9
             setTimeout(function(){
             $("#node_q1").css("background", "#8BCDAB");
             $("#edge3").css("color", "#8BCDAB");
             $("#q1_int_ε").css("background", "#8BCDAB");
             }, time*2)
+            //Keller End
             setTimeout(function(){
             $("#node_q2").css("background", "#8BCDAB");
             $("#edge5").css("color", "#8BCDAB");
@@ -64,7 +209,9 @@ function keller_richtig(){
             $("#edge1, #edge3, #edge5").css("color", "#443B3B");
             $("tr").css("background", "#A59C9C");
 
+            //Buttons enabled
             $('#play_richtig').prop('disabled', false);
+            $('#play_falsch').prop('disabled', false);
             }, time*5);
         break 
           
@@ -74,8 +221,14 @@ function keller_richtig(){
         case "(7)":
         case "(8)": 
         case "(9)": 
-            //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
+
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
 
             setTimeout(function(){
             $("#edge1").css("color", "#8BCDAB");
@@ -108,8 +261,10 @@ function keller_richtig(){
             $("#edge1, #edge2, #edge3, #edge4, #edge5").css("color", "#443B3B");
             $("tr").css("background", "#A59C9C");
     
+            //Buttons enabled
             $('#play_richtig').prop('disabled', false);
-            }, time*6);
+            $('#play_falsch').prop('disabled', false);
+            }, time*6)
        
         break 
 
@@ -118,8 +273,14 @@ function keller_richtig(){
         case "8+7": 
         case "5-2":
         case "9/3": 
-            //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
+
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
 
             setTimeout(function(){
             $("#edge1").css("color", "#8BCDAB");
@@ -157,7 +318,9 @@ function keller_richtig(){
                 $("#edge1, #edge2, #edge3, #edge4, #edge5, #edge6").css("color", "#443B3B");
                 $("tr").css("background", "#A59C9C");
     
+                //Buttons enabled
                 $('#play_richtig').prop('disabled', false);
+                $('#play_falsch').prop('disabled', false);
                 }, time*6);
             break
 
@@ -165,8 +328,14 @@ function keller_richtig(){
         case "(8+0)":
         case "(3*3)":
         case "(8-7)":
-            //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
+
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
 
             setTimeout(function(){
             $("#edge1").css("color", "#8BCDAB");
@@ -217,23 +386,30 @@ function keller_richtig(){
             $("#edge1, #edge2, #edge3, #edge4, #edge5, #edge6").css("color", "#443B3B");
             $("tr").css("background", "#A59C9C");
            
-            //Button "richtiger Ausdruck" enabled
+            //Buttons enabled
             $('#play_richtig').prop('disabled', false);
+            $('#play_falsch').prop('disabled', false);
             }, time*9);
         break
 
 
         case"((((2)*1)+7)/3*9)": 
         case "((((6)*2)+5)/2*4)":
-            //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
+
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
             
             setTimeout(function(){
             $("#edge1").css("color", "#8BCDAB");
             $("#node_q0").css("background", "#8BCDAB");
             $("#q0_ε_ε").css("background","#8BCDAB");
             }, time);
-            //Klammer (1
+            //Klammer (1 auf
             setTimeout(function(){
             $("#edge2").css("color", "#8BCDAB");
             $("#node_q1").css("background", "#8BCDAB");
@@ -244,7 +420,7 @@ function keller_richtig(){
             $("#node_q1").css("background", "#443B3B");
             $("#q1_klammer_ε").css("background", "#A59C9C");
             }, time*3);
-            //Klammer (2
+            //Klammer (2 auf
             setTimeout(function(){
             $("#edge2").css("color", "#8BCDAB");
             $("#node_q1").css("background", "#8BCDAB");
@@ -255,7 +431,7 @@ function keller_richtig(){
             $("#node_q1").css("background", "#443B3B");
             $("#q1_klammer_ε").css("background", "#A59C9C");
             }, time*4);
-            //Klammer (3
+            //Klammer (3 auf
             setTimeout(function(){
             $("#edge2").css("color", "#8BCDAB");
             $("#node_q1").css("background", "#8BCDAB");
@@ -266,13 +442,13 @@ function keller_richtig(){
             $("#node_q1").css("background", "#443B3B");
             $("#q1_klammer_ε").css("background", "#A59C9C");
             }, time*6);
-            //Klammer (4
+            //Klammer (4 auf
             setTimeout(function(){
             $("#edge2").css("color", "#8BCDAB");
             $("#node_q1").css("background", "#8BCDAB");
             $("#q1_klammer_ε").css("background", "#8BCDAB");
             }, time*7);
-            //int 0-9 
+            //Int 0-9 
             setTimeout(function(){
             $("#edge3").css("color", "#8BCDAB");
             $("#node_q2").css("background", "#8BCDAB");
@@ -430,18 +606,25 @@ function keller_richtig(){
             $("#edge1, #edge2, #edge3, #edge4, #edge5, #edge6").css("color", "#443B3B");
             $("tr").css("background", "#A59C9C");
                
-            //Button "richtiger Ausdruck" enabled
+            //Buttons enabled
             $('#play_richtig').prop('disabled', false);
+            $('#play_falsch').prop('disabled', false);
             }, time*33);
         break
 
 
         case "(8)-3":
         case "(2)*9":
-
-             //Button "richtiger Ausdruck" disabled
+            //Buttons disabled
             $('#play_richtig').prop('disabled', true);
+            $('#play_falsch').prop('disabled', true);
+
+            // Statustext: richtig
+            $("#state_container").css('background', "#8BCDAB")
+            document.getElementById("check_text").innerHTML = 
+            "Ausdruck ist richtig und wird vom Kellerautomat akzeptiert!";
             
+            //Start
              setTimeout(function(){
              $("#edge1").css("color", "#8BCDAB");
              $("#node_q0").css("background", "#8BCDAB");
@@ -461,7 +644,7 @@ function keller_richtig(){
              $("#q1_int_ε").css("background", "#8BCDAB");
              }, time*3);
 
-            //Klammer ) zu
+             //Klammer ) zu
              setTimeout(function(){
              $("#edge4").css("color", "#8BCDAB");
              $("#node_q2").css("background", "#8BCDAB");
@@ -505,15 +688,16 @@ function keller_richtig(){
              $("#edge1, #edge2, #edge3, #edge4, #edge5, #edge6").css("color", "#443B3B");
              $("tr").css("background", "#A59C9C");
                    
-             //Button "richtiger Ausdruck" enabled
+             //Buttons enabled
              $('#play_richtig').prop('disabled', false);
+             $('#play_falsch').prop('disabled', false);
              }, time*10);
         break
     }
 }
 })
 
- //----------------------------------------- Alert -------------------------------------------------------//
+//----------------------------------------- Alert -------------------------------------------------------//
  /**
  * Alert-Funktion, JS Framework "Sweet ALert"
  */
@@ -522,7 +706,50 @@ function keller_richtig(){
     //Text in der HTML-Datei
     swal("Dokumentation für Projektaufgabe 3: Kellerautomat", document.getElementById("alert_text").innerText) 
 }
-    
+
+
+//--------------------------------------- Inro.js: Tour starten ------------------------------------------//
+ 
+ async function tour(){
+    introJs().setOptions({
+        steps: [
+            {intro: "Welcome!👋 Diese Seite widmet sich dem Thema von Kellerautomaten (push-down automata)."},
+            
+            {element: document.querySelector(".keller_feld"),
+             intro: "Kellerautomat: Graph und Vokabular. Dieser Kellerautomat kann einfache arithmetische Ausdrücke mit Zahlen {0-9} und Operatoren {+;-;*;/} akzeptieren. Führen Sie den Zeiger auf die Knoten, um zu sehen, mit welchen Schritten aus der Tabelle sie verbunden sind."
+            },
+
+            {element: document.querySelector("#keller_tabelle"),
+             intro: "Tabelle: Überführungsfunktion und einzelne Schritte. Führen Sie den Zeiger auf die Zeilen, um zu sehen, mit welchen Knoten sie verbunden sind."
+            },
+            
+            {element: document.querySelector("#play_richtig"),
+             intro: "Generiert einen richtigen arithmetischen Ausdruck."
+            }, 
+
+            {element: document.querySelector("#play_falsch"),
+             intro: "Generiert einen falschen arithmetischen Ausdruck"
+            }, 
+
+            {element: document.querySelector(".slider_box"),
+             intro: "Reguliert die Geschwindigkeit der Animation."
+            }, 
+
+            {element: document.querySelector("#ausdruck_container"),
+             intro: "Hier wird einen richtigen/falschen arithmetischen Ausdruck gezeigt."
+            }, 
+
+            {element: document.querySelector("#state_container"),
+            intro: "Der Statustext zeigt, ob der Ausdruck vom Kellerautomaten akzeptiert wird."
+            }, 
+
+           {element: document.querySelector("#tech"),
+           intro: "Dokumentation zu dieser Anwendung."
+           }, 
+        ],
+    }).start();
+}
+
 
 
 

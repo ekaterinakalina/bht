@@ -12,11 +12,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>   
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!--Sweetalert JS Framework-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <!--Intro.js Framework: default und modern-->
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+    <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet"> 
+    <link href="https://unpkg.com/intro.js/themes/introjs-modern.css" rel="stylesheet">
      <!--JavaScript file-->          
      <script src="keller_richtig.js"></script>
-     <script src="keller_falsch.js"></script>      
+     <script src="keller_falsch.js"></script>   
      <!--CSS file-->                                                    
     <link rel ="stylesheet" href="keller.css">                                                
     <title>Kellerautomat</title>
@@ -67,14 +73,18 @@
         <h1>KELLERAUTOMAT</h1>                                      <!--Headline-->                  
 
 <!------------------------------------  Regel-Box: linke Seite, Vokabular ------------------------------------------------------>
-        <section class="keller_feld">  
-             <!--Subheadline-->                                                               
-            <p><strong>Vokabular: K = {Q; Σ; Г; δ; S; F}</strong></p>
-            <p>Zustände <strong>Q</strong> = {q0; q1; q2; q3}</p>
-            <p>Input <strong>Σ</strong> = {int 0-9; +; - ; * ; /; (; )}</p>
-            <p>Keller <strong>Г </strong> = {$}</p>
-            <p>Startzustand <strong>S</strong> = {q0}</p>
-            <p>Endzustand <strong>F</strong> = {q3}</p>
+        <section 
+        data-toggle="popover"
+        title = "Kellerautomat "
+        data-content = "Formale Darstellung und Graph"
+        class="keller_feld">  
+             <!--Subheadline-->                                    
+             <p><strong>Vokabular: K = {Q; Σ; Г; δ; S; F}</strong></p>
+             <p>Zustände <strong>Q</strong> = {q0; q1; q2; q3}</p>
+             <p>Input <strong>Σ</strong> = {int 0-9; +; - ; * ; /; (; )}</p>
+             <p>Keller <strong>Г </strong> = {$}</p>
+             <p>Startzustand <strong>S</strong> = {q0}</p>
+             <p>Endzustand <strong>F</strong> = {q3}</p>
 
             <div class="graph">
                 <div id="node_q0">q0</div>
@@ -88,8 +98,7 @@
                 <p id="edge4">), ( --> ε </p>
                 <p id="edge5">ε, $ --> ε </p>
                 <div id="edge6">
-                    <p><strong>+</strong>, ε --> ε; <strong>-</strong>, ε --> ε</p>
-                    <p><strong>*</strong>, ε --> ε; <strong>/</strong>, ε --> ε</p>
+                    <p><strong>+, -, *, /</strong>, ε --> ε</p>
                 </div>
 
                 <img id="arrow1" src="images/keller/arrow1.svg">
@@ -102,7 +111,11 @@
         </section>
 
     <section class="keller_unten">
-        <table class="table table-dark table-hover table-sm" id="keller_tabelle">
+        <table 
+        data-toggle="popover"
+        title="Kellerautomat: Tabelle"
+        data-content="Tabelle mit Überführungsfunktion und Zuständen"
+        class="table table-dark table-hover table-sm" id="keller_tabelle">
           <thead>
             <tr>
                 <th id="table_top" class="table_letter">δ:Q</th>
@@ -159,13 +172,23 @@
 
 
         <div class="button_container">
-            <div id="ausdruck_container", class="card">
+            <div 
+             data-toggle="popover" 
+             title="Output: richtiger/falscher Ausdruck" 
+             data-content="Klicken Sie auf den grünen/roten Button, um einen ricthigen/falschen Ausdruck 
+             zu generieren", id="ausdruck_container", 
+             class="card">
               <div class="card-body">
               <span id="ausdruck_text"></span> 
               </div>
             </div>
 
-            <div id="state_container" class="card">
+            <div 
+             data-toggle="popover" 
+             title="Status "
+             data-content="Status zeigt, ob der Ausdruck vom Kellerautomaten akzeptiert wird.", 
+             id="state_container" 
+             class="card">
                 <div class="card-body">
                 <p id="check_text"></p> 
                 </div>
@@ -173,10 +196,15 @@
 
             <button id="play_richtig" type="button" class="btn btn-light btn-block mt-4">richtiger Ausdruck</button>
             <button id="play_falsch" type="button" class="btn btn-light btn-block mt-4">falscher Ausdruck</button>
-            <button id="step" class="btn btn-secondary mt-3">step</button>
+            <button id="tour" class="btn btn-secondary mt-3" onclick="tour()">Tour starten!</button>
             <button id="tech" class="btn btn-secondary mt-3" onclick="myAlert()">Tech-Stack</button>
+    
 
-            <div class="slider_box">
+            <div 
+            data-toggle="popover"
+            title = "Slider"
+            data-content = "Geschwindigkeitskontrolle: schnell -- langsam"
+            class="slider_box">
                  <input id="slider" type="range" max="3000" min="0" value="1500" step="200"> 
             </div> 
         </div>
@@ -184,7 +212,7 @@
     </main>
 
     <footer>
-        <p>Author: Ekaterina Kalina; Berliner Hochschule für Technik, SS21</p>
+        <p>Author: Ekaterina Kalina; Berliner Hochschule für Technik (BHT), SS21</p>
     </footer>
       
       
