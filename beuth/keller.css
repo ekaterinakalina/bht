@@ -1,5 +1,7 @@
+/*---------------------------------------- Body ----------------------------------------*/
 *{
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
 }
 
@@ -20,7 +22,7 @@ body {
 } 
 
 
-/*----------------- Wrapper -----------------*/
+/*----------------- Wrapper ---------------------*/
 .wrapper {
   width: 1200px;
   margin: 0 auto;
@@ -38,18 +40,32 @@ body {
 }
 
 nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between; 
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; 
   height: 72px;
 }
 
 
 nav ul{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transform: translate(5px,10px)
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translate(5px,10px);
+      -ms-transform: translate(5px,10px);
+          transform: translate(5px,10px)
 }
 
 .nav-items li {
@@ -61,19 +77,23 @@ nav ul{
   margin: 0;
 }
 
-/*----------------- Active links -----------------*/
+/*----------------- Active links --------------------*/
 .nav-items li a {
   color: #F3EAEA;
   font-size: 23px;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   display: inline-block;
+  -webkit-transition: 600ms;
+  -o-transition: 600ms;
   transition: 600ms;
 }
 
 /*----------------- Hover function -----------------*/
 .nav-items li a:hover {
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 
@@ -93,15 +113,23 @@ nav ul{
   position: fixed; 
   background: #E2DDDD;
   height: calc(110vh - 70px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   align-items: center;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   }
 
 
-/*-Headings--*/
+
+/*----------------- Heading -----------------*/
 h1 {
   position: absolute;
   letter-spacing: 0.2em;
@@ -110,23 +138,31 @@ h1 {
   font-size: 35px;
   top: +50px;
   left: +760px;
-  justify-content: center;
-  align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-
+/*---------------------------------------- Kellerautomat: Vokabular und Graph ----------------------------------------*/
 .keller_feld {
   position: fixed;
   width: 1815px;
   height: 300px;
   background: #FDFCFC;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 64px;
-  justify-content: center;
-  align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   left: +40px;
   top: +200px;
 }
+
 
 .keller_feld p {
   position:relative;
@@ -136,20 +172,23 @@ h1 {
   right: -100px;
 }
 
-
+/*----------------- Kellerautomat: Knoten -----------------*/
 #node_q0 {
   position: absolute;
   width: 83px;
   height: 81px;
   background: #443B3B;
   border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
   font-size: 40px;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
   right: +1240px;
   top: +120px;
-  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 
 
@@ -159,13 +198,16 @@ h1 {
   height: 81px;
   background: #443B3B;
   border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
   font-size: 40px;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
   right: +900px;
   top: +120px;
-   flex-basis: auto;
+   -ms-flex-preferred-size: auto;
+       flex-basis: auto;
 }
 
 #node_q2 {
@@ -174,9 +216,11 @@ h1 {
   height: 81px;
   background: #443B3B;
   border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
   font-size: 40px;
   right: +460px;
   top: +120px;
@@ -188,45 +232,95 @@ h1 {
   height: 81px;
   background: #443B3B;
   border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #FDFCFC;
   font-size: 40px;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
   right: +120px;
   top: +120px;
 }
 
+
+/*----------------- Kellerautomat: Pfeile -----------------*/
+#arrow1 {
+  position: relative;
+  width: 15%;
+  -webkit-transform: translate(563px,-160px);
+      -ms-transform: translate(563px,-160px);
+          transform: translate(563px,-160px);
+}
+
+#arrow2 {
+  -webkit-transform: translate(580px,-200px);
+      -ms-transform: translate(580px,-200px);
+          transform: translate(580px,-200px);
+}
+
+#arrow3{
+  width: 20%;
+  -webkit-transform: translate(542px,-160px);
+      -ms-transform: translate(542px,-160px);
+          transform: translate(542px,-160px);
+}
+
+#arrow4 {
+  -webkit-transform: translate(560px,-200px);
+      -ms-transform: translate(560px,-200px);
+          transform: translate(560px,-200px);
+}
+
+#arrow5 {
+  width: 15%;
+  -webkit-transform: translate(515px,-160px);
+      -ms-transform: translate(515px,-160px);
+          transform: translate(515px,-160px);
+}
+
+#arrow6 {
+  width: 20%;
+  -webkit-transform: translate(-193px,-130px);
+      -ms-transform: translate(-193px,-130px);
+          transform: translate(-193px,-130px);
+}
+
+
+/*---------------------------------------- Uneterer Bereich: Kellertabelle + Control-Box ----------------------------------------*/
 .keller_unten {
   position: absolute;
   bottom: 300px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
+/*---------------------------------------- Kellertabelle ----------------------------------------*/
 #keller_tabelle {
   position: absolute;
   background-color: #A59C9C;
   color: #443B3B;
   left: 550px;
-  bottom: -150px;
+  bottom: -140px;
   font-size: 20px;
   font-weight: lighter;
   width: 400px;
   height: 250px;
 }
 
+/*----------------- Kellertabelle: Header -----------------*/
 #table_top {
   background-color: #443B3B;
   color: #FDFCFC;
   font-weight: lighter;
 }
 
+/*----------------- Kellertabelle: Zeilen -----------------*/
 #edge1 {
   position:absolute;
   font-weight: bolder;
   font-size: 25px;
   left: +660px;
   top: 110px;
-
 }
 
 #edge2 {
@@ -274,48 +368,29 @@ h1 {
 }
 
 
-#arrow1 {
-  position: relative;
-  width: 15%;
-  transform: translate(563px,-160px);
-}
+/*----------------------------------------- Control-Box ----------------------------------------*/
 
-#arrow2 {
-  transform: translate(580px,-200px);
-}
-
-#arrow3{
-  width: 20%;
-  transform: translate(542px,-160px);
-}
-
-#arrow4 {
-  transform: translate(560px,-200px);
-}
-
-#arrow5 {
-  width: 15%;
-  transform: translate(515px,-160px);
-}
-
-#arrow6 {
-  width: 20%;
-  transform: translate(-193px,-130px);
-}
-
-
+/*----------------- Button Container -----------------*/
 .button_container button{
-  transform: translate(1000px,190px);
-  flex-wrap: wrap;
+  -webkit-transform: translate(1000px,180px);
+      -ms-transform: translate(1000px,180px);
+          transform: translate(1000px,180px);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-size: 15px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/*----------------- Output: Ausdruckfeld -----------------*/
 #ausdruck_container {
-  transform: translate(1000px,190px);
+  -webkit-transform: translate(1000px,180px);
+      -ms-transform: translate(1000px,180px);
+          transform: translate(1000px,180px);
   width: 450px;
   height: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #ausdruck_text {
@@ -323,11 +398,15 @@ h1 {
   font-weight: bolder;
 }
 
+/*----------------- Output: Statustext -----------------*/
 #state_container {
-  transform: translate(1000px,200px);
+  -webkit-transform: translate(1000px,190px);
+      -ms-transform: translate(1000px,190px);
+          transform: translate(1000px,190px);
   width: 450px;
   height: 80px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #state_container p {
@@ -335,6 +414,8 @@ h1 {
   font-weight: bolder;
 }
 
+/*----------------- Buttons -----------------*/
+/*----------------- Richtiger Ausdruck + hover -----------------*/
 #play_richtig {
   background-color: #8BCDAB;
   border-color: #8BCDAB;
@@ -346,6 +427,7 @@ h1 {
   border-color: #6ba989;
 }
 
+/*----------------- Falscher Ausdruck + hover -----------------*/
 #play_falsch {
   background-color: #F58A8A;
   border-color: #F58A8A;
@@ -357,20 +439,30 @@ h1 {
   border-color: #d56565;
 }
 
+/*----------------- Tech-Stack + hover + Dokumentation -----------------*/
  #tech {
   background-color: #7696CD;
   border-color: #7696CD;
  } 
+ 
+ #alert_text {
+  display:none;
+}
 
  #tech:hover {
   background-color: #5f82bf;
   border-color: #5f82bf;
- } 
+ }
+ 
+ /*----------------- Slider -----------------*/
 
 .slider_box {
-  transform: translate(1280px,170px);
+  -webkit-transform: translate(1280px,160px);
+      -ms-transform: translate(1280px,160px);
+          transform: translate(1280px,160px);
 }
 
+/*----------------- Footer -----------------*/
 footer {
     position: fixed;
     left: 0;
@@ -381,9 +473,7 @@ footer {
     text-align: center;
 }
 
-#alert_text {
-  display:none;
-}
+
 
 
 

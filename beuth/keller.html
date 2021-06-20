@@ -8,22 +8,22 @@
     <meta name= "viewport" content= "width=device-width, initial scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <!--jQuery Library-->
+    <!-- Library: jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>   
-    <!-- Bootstrap CSS -->
+    <!-- Library: Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!--Sweetalert JS Framework-->
+    <!-- JS Framework: Sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-    <!--Intro.js Framework: default und modern-->
+    <!-- JS Framework: Intro.js (default und modern)-->
     <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet"> 
     <link href="https://unpkg.com/intro.js/themes/introjs-modern.css" rel="stylesheet">
-     <!--JavaScript file-->          
-     <script src="keller_richtig.js"></script>
-     <script src="keller_falsch.js"></script>   
-     <!--CSS file-->                                                    
+    <!--JavaScript file-->          
+    <script src="keller_richtig.js"></script>
+    <script src="keller_falsch.js"></script>   
+    <!--CSS file-->                                                    
     <link rel ="stylesheet" href="keller.css">                                                
     <title>Kellerautomat</title>
 </head>
@@ -67,57 +67,60 @@
 
    
 
-<!------------------------------------  Main-Container ------------------------------------------------------------------------>  
+<!------------------------------------  Main-Container ------------------------------------------------------>  
 <div class="main_container">
     <main>
-        <h1>KELLERAUTOMAT</h1>                                      <!--Headline-->                  
+        <!--Headline-->  
+        <h1>KELLERAUTOMAT</h1>                                                      
 
-<!------------------------------------  Regel-Box: linke Seite, Vokabular ------------------------------------------------------>
-        <section 
+<!------------------------------------  Kellerautomat ------------------------------------------------------>
+     <!--Formale Darstellung + Popover-->     
+     <section 
         data-toggle="popover"
         title = "Kellerautomat "
         data-content = "Formale Darstellung und Graph"
-        class="keller_feld">  
-             <!--Subheadline-->                                    
+        class="keller_feld">                                
              <p><strong>Vokabular: K = {Q; Σ; Г; δ; S; F}</strong></p>
              <p>Zustände <strong>Q</strong> = {q0; q1; q2; q3}</p>
-             <p>Input <strong>Σ</strong> = {int 0-9; +; - ; * ; /; (; )}</p>
+             <p>Input <strong>Σ</strong> = {Z 0-9; +; - ; * ; /; (; )}</p>
              <p>Keller <strong>Г </strong> = {$}</p>
              <p>Startzustand <strong>S</strong> = {q0}</p>
              <p>Endzustand <strong>F</strong> = {q3}</p>
+             
+             <!--Graph--> 
+             <div class="graph">
+             <div id="node_q0">q0</div>
+             <div id="node_q1">q1</div>
+             <div id="node_q2">q2</div>
+             <div id="node_q3">q3</div>
 
-            <div class="graph">
-                <div id="node_q0">q0</div>
-                <div id="node_q1">q1</div>
-                <div id="node_q2">q2</div>
-                <div id="node_q3">q3</div>
+             <p id="edge1">ε, ε --> $ </p>
+             <p id="edge2">(, ε --> ( </p>
+             <p id="edge3">Z 0-9, ε --> ε </p>
+             <p id="edge4">), ( --> ε </p>
+             <p id="edge5">ε, $ --> ε </p>
+             <div id="edge6">
+                 <p><strong>+, -, *, /</strong>, ε --> ε</p>
+             </div>
 
-                <p id="edge1">ε, ε --> $ </p>
-                <p id="edge2">(, ε --> ( </p>
-                <p id="edge3">int 0-9, ε --> ε </p>
-                <p id="edge4">), ( --> ε </p>
-                <p id="edge5">ε, $ --> ε </p>
-                <div id="edge6">
-                    <p><strong>+, -, *, /</strong>, ε --> ε</p>
-                </div>
-
-                <img id="arrow1" src="images/keller/arrow1.svg">
-                <img id="arrow2"src="images/keller/arrow2.svg">
-                <img id="arrow3"src="images/keller/arrow3.svg">
-                <img id="arrow4"src="images/keller/arrow4.svg">
-                <img id="arrow5" src="images/keller/arrow1.svg">
-                <img id="arrow6"src="images/keller/arrow6.svg">
+             <img id="arrow1" src="images/keller/arrow1.svg">
+             <img id="arrow2"src="images/keller/arrow2.svg">
+             <img id="arrow3"src="images/keller/arrow3.svg">
+             <img id="arrow4"src="images/keller/arrow4.svg">
+             <img id="arrow5" src="images/keller/arrow1.svg">
+             <img id="arrow6"src="images/keller/arrow6.svg">
             </div>
         </section>
 
-    <section class="keller_unten">
+     <!--Tabelle und Control-box--> 
+     <section class="keller_unten">
         <table 
         data-toggle="popover"
         title="Kellerautomat: Tabelle"
         data-content="Tabelle mit Überführungsfunktion und Zuständen"
         class="table table-dark table-hover table-sm" id="keller_tabelle">
-          <thead>
-            <tr>
+         <!--Tabelle: Header--> 
+          <thead> 
                 <th id="table_top" class="table_letter">δ:Q</th>
                 <th id="table_top" class="table_letter">Σe</th>
                 <th id="table_top" class="table_letter">Γe</th>
@@ -125,6 +128,7 @@
             </tr>
            </thead>
 
+         <!--Tabelle: Zeilen--> 
           <tbody id="tBody">
             <tr id="q0_ε_ε">
                 <th class="table_letter">q0</th>
@@ -142,7 +146,7 @@
 
             <tr id="q1_int_ε">
                  <th class="table_letter">q1</th>
-                 <th class="table_letter">int 0-9</th>
+                 <th class="table_letter">Z 0-9</th>
                  <th class="table_letter">ε</th>
                  <th class="table_letter">{(q2, ε)}</th>
             </tr>
@@ -170,10 +174,11 @@
           </tbody>
         </table>
 
-
-        <div class="button_container">
+        <!--Control-Box--> 
+        <div class="button_container">   
+            <!--Ausdruck Feld + Popover Funktion--> 
             <div 
-             data-toggle="popover" 
+             data-toggle="popover"  
              title="Output: richtiger/falscher Ausdruck" 
              data-content="Klicken Sie auf den grünen/roten Button, um einen ricthigen/falschen Ausdruck 
              zu generieren", id="ausdruck_container", 
@@ -183,6 +188,7 @@
               </div>
             </div>
 
+            <!--Statustext + Popover Funktion--> 
             <div 
              data-toggle="popover" 
              title="Status "
@@ -194,12 +200,13 @@
                 </div>
               </div>
 
+            <!--Buttons--> 
             <button id="play_richtig" type="button" class="btn btn-light btn-block mt-4">richtiger Ausdruck</button>
             <button id="play_falsch" type="button" class="btn btn-light btn-block mt-4">falscher Ausdruck</button>
             <button id="tour" class="btn btn-secondary mt-3" onclick="tour()">Tour starten!</button>
             <button id="tech" class="btn btn-secondary mt-3" onclick="myAlert()">Tech-Stack</button>
     
-
+            <!--Slider + Popover --> 
             <div 
             data-toggle="popover"
             title = "Slider"
@@ -210,50 +217,48 @@
         </div>
     </section>
     </main>
-
+    
+    <!--Footer--> 
     <footer>
         <p>Author: Ekaterina Kalina; Berliner Hochschule für Technik (BHT), SS21</p>
     </footer>
       
       
-<!------------------------------------  Dokumentation ------------------------------------------------------------------------------->  
- <div id="alert_text">   
-    <p>Diese kontextfreie Grammatik erzeugt zufällige richtige und falsche arithmetische Ausdrücke über einstelligen natürlichen Zahlen mit den Operanden
-    "+,-,*,/" und beliebig vielen Klammern().</p>
-    <p>   </p>
-    <p>**Vokabular:**</p>
-
-    <p>Grammatik: G = {V,Σ,R,S}</p>
-    <p>Terminalvariablen: Σ = {0|1|2|3|4|5|6|7|8|9|+|-|*|/}<p>
-    <p>Nichtterminalvariablen: V = {A,O,Z}; S={A}</p>  
-    <p>Regeln R:</p>
-    <p>1. A → (a)Z;  (b)AOA;  (c)(A) </p>  
-    <p>2. O → +| - | / | *</p> 
-    <p>3. Z →  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</p>  
+<!------------------------------------  Dokumentation ------------------------------------------------------>  
+ <div id="alert_text">
+    <p>Der Kellerautomat liest zufällige richtige und falsche arithmetische Ausdrücke, die von der kontextfreien Grammatik
+       aus der Projektaufgabe 2 generiert wurden.</p> 
+    <p>Der Kellerautomat akzeptiert einstellige natürliche Zahlen {0-9} mit den Operanden {+,-,*,/} und beliebig vielen Klammern{(,)}.</p>  
     <p>   </p>
 
+    <p>Link zur Dokumentation: </p>
+   
+    <p>   </p>
     <p>**Tech Stack**</p>
-    <p>   </p>
-    <p>*JavaScript*: die Web-Anwedung besteht aus zwei Hauptfunktionen ausdruck_richtig() und ausdruck_falsch(), 
+    <p>*JavaScript*: die Web-Anwedung besteht aus zwei Hauptfunktionen keller_richtig() und keller_falsch(), 
         die zufällige arithmetische Ausdrücke mit Hilfe der Methode "Math.floor(Math.random()" erzeugen. 
-        Die Struktur der Funktionen basiert sich auf "switch-case" Verzweigung. 
+        Die Struktur der Funktionen basiert sich auf "switch-case" Verzweigung. Für jedes "case" sind bestimmte Animationen mit Hilfe von jQuery programmiert. 
+        Kontrolle wird durch Buttons "richtiger/falscher Ausdruck", "Slider" ermöglicht.
+        Beide Ausgaben werden in separaten Feldern gezeigt.</p>
+    <p>*HTML5*: Strukturierung von Inhalten</p> 
+    <p>*CSS*: Gestaltung</p> 
+
+    <p>   </p> 
+    <p>**Libraries**</p> 
+    <p>jQuery: ist eine JS-Bibliothek und wird zur einfacheren Manipulation der HTML-Elemente benutzt.
+       Die Web-Anwedung ist automatisch animiert mit Methode ".css()": die Reihenfolge der Schritte wird angezeigt.
+       mouseenter(), mouseleave(): man kann sehen, welche Knoten mit welchen Zeilen/Schritten aus der Tabelle verbunden sind;
+       "setTimeout(function()": wird die Ausgabe zeitlich verzögert, dadurch wird schrittweises Abspielen
+       erreicht; Link: https://api.jquery.com</p> 
+    <p>Bootstrap: JS, HTML5, CSS für responsive, mobile-first Webdesign. Link: https://getbootstrap.com</p> 
+    
     <p>   </p>
-        Kontrolle wird durch Buttons "Generiere einen richtigen/falschen Ausdruck", "Stop", "Slider" ermöglicht.
-        Die Hauptbuttons erzeugen einen richtigen/falschen Ausdruck und eine Reihe von Produktionsschritten.
-        Beide Ausgaben werden in separaten Feldern gezeigt. Gleichzeitig wird Animation der Regeln gestartet.
-    <p>   </p>
-    <p>*jQuery*: ist eine JS-Bibliothek und wird zur einfacheren Manipulation der HTML-Elemente benutzt.
-       Die Web-Anwedung ist automatisch animiert: die Reihenfolge der Regeln wird schrittweise angezeigt und
-       wird mit Farben und vergrößerter Schrift verdeutlicht. Die Hauptmethoden sind: ".animate()", ".css()".
-       Mit "setTimeout(function()" wird die Ausgabe zeitlich verzögert, dadurch wird schrittweises Abspielen
-       erreicht. Link: https://api.jquery.com
-    <p>   </p>
+    <p>**Tools**</p>
     <p>*SweetAlert*: ein JS Framework, das als mehr interessanter Ersatz für "window.alert()"-Funktion dient und
         das Lesen dieser Dokumentation ermöglicht! Link: https://sweetalert.js.org</p> 
-    <p>   </p>
-    <p>*HTML5*: Strukturierung von Inhalten</p> 
-    <p>   </p> 
-    <p>*CSS*: Gestaltung</p> 
+    <p>*Intro.js*: ein JS Framework für schrittweise Darstellung des Interfaces; Link: https://introjs.com/</p>
+    <p>*Autoprefixer*: fügt Präfixe zu CSS-Attributen, um sie für verschiedene Browsers zu adoptieren; Link: https://github.com/postcss/autoprefixer</p>
+    <p>*JSDoc*: automatische Erstellung von Dokumentation als html-Seite; Link: https://jsdoc.app/</p>  
  </div>
 
  </body>

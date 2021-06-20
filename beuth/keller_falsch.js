@@ -1,7 +1,9 @@
-$(function () {
+$(function () { //jQuery Funktion
 //----------------------------------------- Variablen --------------------------------------------------//
-var time = 1500;  //Zeit-Variable ist mit Slider einstellbar
-var keller_ausdrucke_falsch =  //falsche Ausdrucke
+//Zeit-Variable ist mit Slider einstellbar
+var time = 1500;   
+//falsche Ausdrucke
+var keller_ausdrucke_falsch =  
 ["99)", "17)", 
 "(21", "(12",
 "48/2", "14*3",
@@ -10,6 +12,7 @@ var keller_ausdrucke_falsch =  //falsche Ausdrucke
 
 
 //--------------------------------------- Button Events--------------------------------------------------//
+//Button falscher Ausdruck
 $("#play_falsch").click(keller_falsch); 
 //Slider-Funktion lässt die Geschwindigkeit einstellen
 $("#slider").on("change",function(){                                          
@@ -21,10 +24,12 @@ $("#slider").on("change",function(){
 //----------------------------------------- Falsche Ausdrucke -------------------------------------------//
 /**
 * Funktion für Ausgabe von falschen Ausdrucken für den Kellerautomat. 
-* Falsche Ausdrucke werden zufällig ausgegeben und farbig animiert.
+* Falsche Ausdrucke werden zufällig ausgegeben und farbig animiert (Knoten,Kanten,Tabellenzeilen).
 */
 function keller_falsch(){
+    //zufällige falsche Ausdrucke werden aus dem Array mit falschen Ausdrucken ausgegeben
     var keller_ausgabe_falsch = keller_ausdrucke_falsch[Math.floor(Math.random()*keller_ausdrucke_falsch.length)];
+    //die Ausgabe wird im HTML-Element "ausdruck_text" gezeigt  
     document.getElementById("ausdruck_text").innerHTML = keller_ausgabe_falsch;
 
     switch (keller_ausgabe_falsch){
@@ -228,7 +233,6 @@ function keller_falsch(){
              document.getElementById("check_text").innerHTML = 
              "Ausdruck ist falsch und kann nicht den Endzustand erreichen.";
           
-
              //Start 
              setTimeout(function(){
              $("#edge1").css("color", "#8BCDAB");
