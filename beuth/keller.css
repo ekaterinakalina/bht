@@ -341,15 +341,30 @@ h1 {
   font-weight: bold;
 }
 
+#play_richtig:hover {
+  background-color: #6ba989;
+  border-color: #6ba989;
+}
+
 #play_falsch {
   background-color: #F58A8A;
   border-color: #F58A8A;
   font-weight: bold;
 }
 
+#play_falsch:hover {
+  background-color: #d56565;
+  border-color: #d56565;
+}
+
  #tech {
   background-color: #7696CD;
   border-color: #7696CD;
+ } 
+
+ #tech:hover {
+  background-color: #5f82bf;
+  border-color: #5f82bf;
  } 
 
 .slider_box {
