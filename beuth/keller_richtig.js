@@ -2,7 +2,7 @@
 $(function () { //jQuery Funktion
 
 //----------------------------------------- Variablen ---------------------------------------------------//
-//Zeit-Variable ist mit Slider einstellbar 
+ //Zeit-Variable ist mit Slider einstellbar 
  var time = 1500;  
  //richtige Ausdrucke
  var keller_ausdrucke_richtig =  
@@ -777,7 +777,7 @@ function keller_richtig(){
 
   function myAlert() {
     //Text im HTML-Element #alert_text
-    swal("Dokumentation für Projektaufgabe 3: Kellerautomat", document.getElementById("alert_text").innerText) 
+    swal("Projektaufgabe 3: Kellerautomat", document.getElementById("alert_text").innerText) 
 }
 
 
