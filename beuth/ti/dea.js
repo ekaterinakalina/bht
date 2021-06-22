@@ -1,12 +1,7 @@
-
-
 $(document).ready(function () {
-
-
+  
     //-----------------input focus und Buttons default----//
      
-   
-   
        $("input").focus(function(){
          $(this).css("background-color", "2796A8");
        });
@@ -121,7 +116,7 @@ $(document).ready(function () {
        
    
    
-          /*-------------------Variablen/Konstanten----------------------*/
+      /*-------------------Variablen/Konstanten----------------------*/
     
        let arword=["B"];
        var ar1=["T","P"];
@@ -143,7 +138,7 @@ $(document).ready(function () {
        $("#speed_text").text(time+"ms");
   
          
-         /*-------------------------------Funktionen----------------------*/
+      /*-------------------------------Funktionen----------------------*/
    
        function check(){
          state=0;
@@ -630,9 +625,6 @@ $(document).ready(function () {
          time = $(this).val();
          $("#speed_text").text(time+"ms");
        });
-         
-   
-   
    });
    
    
