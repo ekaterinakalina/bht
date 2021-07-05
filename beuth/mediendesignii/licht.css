@@ -1,0 +1,115 @@
+/*------------------------------------------Navbar------------------------------------------*/
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/*Body*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:  border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: #323a43;
+    background-image: linear-gradient(135deg, #485461 0%, #222a34 70%);
+}
+
+/*Navbar*/
+.navbar-brand {
+    position: static;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Logo + Animation*/
+#logo {
+    width: 45%;
+    filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
+}
+@keyframes logo_pulse {
+    0%{
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+#logo:hover{
+    animation: logo_pulse 3s;
+}
+.logo_box {
+    transform: translate(-650px,0px);
+}
+
+/*Arrow + Animation*/
+#arrow {
+    width: 250%;
+    filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
+    transition: 600ms;
+}
+#arrow:hover {
+    transform: translateX(15px);
+}
+.arrow_box {
+    transform: translate(700px,-70px);
+}
+/*------------------------------------------Main------------------------------------------*/
+main {
+    min-height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;           /*!Wrap*/ 
+    align-items: center;
+    justify-content: center;
+}
+/*------------------------------------------Content------------------------------------------*/
+/*Titles*/
+h1{
+    color: #d5dbe1;
+    display: flex;            /*!schieben Text in die Mitte:*/ 
+    justify-content: center;  /*!schieben Text in die Mitte:*/
+    text-align: center;       /*!schieben Text in die Mitte:*/
+    font-size: 60px;
+}
+h2{
+    color: #d5dbe1;
+    font-size: 40px;
+}
+/*Thumbnails: change size + hover*/
+.row a {
+    border-radius: 5px;
+    width: 2300px;
+}
+.row a:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+img{
+    border-radius: 5px;
+}
+/*Thumbnails: move*/
+#row_oben {
+    transform: translateY(40px);
+}
+#row_unten {
+    transform: translateY(60px);
+}
+/*------------------------------------------Footer------------------------------------------*/
+footer {
+    width: 100%;
+    padding: 150px;
+    color: #d5dbe1;
+    text-align: center; 
+}

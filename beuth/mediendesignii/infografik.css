@@ -1,0 +1,153 @@
+/*------------------------------------------Navbar------------------------------------------*/
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+/*Body*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:  border-box;
+}
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: #323a43;
+    background-image: linear-gradient(135deg, #485461 0%, #222a34 70%);
+}
+
+/*Navbar*/
+.navbar-brand {
+    position: static;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Logo + Animation*/
+#logo {
+    width: 45%;
+    filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
+}
+@keyframes logo_pulse {
+    0%{
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+#logo:hover{
+    animation: logo_pulse 3s;
+}
+.logo_box {
+    transform: translate(-650px,0px);
+}
+
+/*Arrow + Animation*/
+#arrow {
+    filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
+    transition: 600ms;
+}
+#arrow:hover {
+    transform: translateX(15px);
+}
+.arrow_box {
+    transform: translate(700px,-70px);
+}
+/*------------------------------------------Main Infografik------------------------------------------*/
+main {
+    min-height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(40px);
+}
+/*------------------------------------------Content------------------------------------------*/
+/*Title*/
+h1{
+    color: #d5dbe1;
+    display: flex;            /*!schieben Text in die Mitte:*/ 
+    justify-content: center;  /*!schieben Text in die Mitte:*/
+    text-align: center;       /*!schieben Text in die Mitte:*/
+    font-size: 60px;
+    transform: translateY(-50px);
+}
+
+/*Circles + Animation*/
+.circle {
+    position: float;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #d5dbe1;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    display: flex;               /*!schieben Text in die Mitte:*/ 
+    justify-content: center;     /*!schieben Text in die Mitte:*/ 
+    align-items: center;         /*!schieben Text in die Mitte:*/ 
+    animation: pulse-white 2s infinite;
+    margin-bottom: 10px;
+}
+@keyframes pulse-white {
+    0%{
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+/*Pictures in circles*/
+img {
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Text rules*/
+.rules {
+   position: fixed;
+   background-color: #525c67;
+   width: 450px;
+   height: 100px;
+   border-radius: 10px;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);            
+   display: flex;               
+   justify-content: center;     
+   align-items: center;         
+   transform: translate(210px,30px);
+}
+#rules_mask,#rules_attention {
+    transform: translate(-500px,30px);
+}
+.rules p{
+    color: #d5dbe1;
+    text-align: center; 
+    font-size: 22px;
+    font-weight: bolder;
+}
+/*------------------------------------------Footer------------------------------------------*/
+footer {
+    width: 100%;
+    padding: 150px;
+    color: #d5dbe1;
+    text-align: center; 
+}
+
+
+
