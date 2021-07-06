@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Library: Bootstrap Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--CSS file-->   
     <link rel="stylesheet" href="brennweiten.css"/>
      <!--Title-->  
@@ -34,52 +37,26 @@
         </a>
     </nav>
     <h1>Brennweiten</h1>
-    <!------------------------------------ Main-------------------------------------------------------------------------->
+    <!------------------------------------ Main: lightbox-------------------------------------------------------------------------->
     <main>
         <h2><i>...einsame Spaziergänge</i></h2>
         <!-- Image gallery -->
-        <!-- Photo 1 -->
-        <div class="row">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <a href="images/brennweiten/weitwinkel.JPG">
-                  <img 
-                  id="weit" 
-                  src="images/brennweiten/weitwinkel.JPG" 
-                  alt="Bank unter dem Baum, Weitwinkelobjektiv" 
-                  style="width:150%"
-                  >
-                  <div class="caption">
-                    <p id="text_weit">Weitwinkelobjektiv:<br> F 3.3 / 500 / ISO 125 <br>(24 mm)</p>
-                  </div>
-                </a>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+              <!-- 1. Reihe -->
+              <div id="row_all" class="row">
+                  <a href="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600351/mediendesign/weitwinkel-min_pnb0zh.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Weitwinkelobjektiv" data-footer="F 3.3 / 500 / ISO 125 (24 mm)" class="col-sm-4" > 
+                      <img id="image" src="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600351/mediendesign/weitwinkel-min_pnb0zh.jpg" class="img-fluid">
+                  </a>
+                  <a href="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600351/mediendesign/normal-min_b8cqhx.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Normalobjektiv" data-footer="F 3.6 / 200 / ISO 125 (45mm)" class="col-sm-4">
+                      <img id="image" src="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600351/mediendesign/normal-min_b8cqhx.jpg" class="img-fluid">
+                  </a>
+                  <a href="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600350/mediendesign/tele-min_hb1eci.jpg" data-toggle="lightbox" data-gallery="example-gallery" data-title="Teleobjektiv" data-footer="F 6.4 / 125 / ISO 400 (503 mm)" class="col-sm-4">
+                      <img id="image" src="https://res.cloudinary.com/dskvgobc1/image/upload/v1625600350/mediendesign/tele-min_hb1eci.jpg"  class="img-fluid">
+                  </a>
               </div>
-            </div>
-            
-            <!-- Photo 2 -->
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <a href="images/brennweiten/normal.JPG">
-                  <img id="normal" src="images/brennweiten/normal.JPG" alt="Bank unter dem Baum, Normalobjektiv" style="width: 150%">
-                  <div class="caption">
-                    <p id="text_normal">Normalobjektiv:<br> F 3.6 / 200 / ISO 125 <br>(45mm)</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!-- Photo 3 -->
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <a href="images/brennweiten/tele.JPG">
-                  <img id="tele" src="images/brennweiten/tele.JPG" alt="Bank unter dem Baum, Teleobjektiv"  style="width:150%">
-                  <div class="caption">
-                    <p id="text_tele">Weirwinkelobjektiv:<br> F 6.4 / 125 / ISO 400 <br>(503 mm)</p>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
+        </div>  
     </main> 
    </div>
 
@@ -92,5 +69,11 @@
        
     <!--JavaScript file-->          
     <script src="main.js"></script>
+    <!--JS: Lightbox-->   
+    <script>$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+  </script>
 </body>
 </html>

@@ -81,59 +81,26 @@ h1{
     justify-content: center;  /*!schieben Text in die Mitte:*/
     text-align: center;       /*!schieben Text in die Mitte:*/
     font-size: 60px;
-    caption-side: bottom;
 }
 h2{
     color: #d5dbe1;
     font-size: 40px;
 }
-
-/*Thumbnails position*/
-.row {
-    display: inline-flexbox;
-    align-items: center;
-    justify-content: space-between;
-}
-/*Removing link decorations*/
+/*Thumbnails: change size + hover*/
 .row a {
-    text-decoration: none;
-    color: #E2DDDD;
-    font-size: 30px;
+    border-radius: 5px;
+    width: 3000px;
 }
-.row img {
+.row a:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+#image {
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
+}
+img{
     border-radius: 5px;
 }
-
-/*Captions position*/
-#text_weit {
-    transform: translateX(-350px);
-}
-#text_normal {
-    transform: translateX(-90px);
-}
-#text_tele {
-    transform: translateX(170px);
-}
-
-/*Thumbnail position + shadow*/
-#weit {
-   transform: translateX(-350px);
-   box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
-}
-#normal {
-    transform: translateX(-90px);
-    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
-}
-#tele {
-    transform: translateX(170px);
-    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
- }
-
- /*Hover on thumbnail*/
- .thumbnail:hover {
-     transition: 1s ease-in-out;
-     transform: scale(1.1);
- }
 /*------------------------------------------Footer------------------------------------------*/
 footer {
     width: 100%;
@@ -141,4 +108,3 @@ footer {
     color: #d5dbe1;
     text-align: center; 
 }
-

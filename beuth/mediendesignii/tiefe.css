@@ -86,42 +86,24 @@ h2{
     color: #d5dbe1;
     font-size: 40px;
 }
-
-/*Thumbnails position*/
-.row {
-    align-items: center;
-    justify-content: space-between;
-}
-/*Removing link decorations*/
+/*Thumbnails: change size + hover*/
 .row a {
-    text-decoration: none;
-    color: #E2DDDD;
-    font-size: 30px;
-}
-
-#unscharf {
-    transform: translate(-50px,30px);
     border-radius: 5px;
-    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
+    width: 2500px;
 }
-#scharf {
-    transform: translate(-150px,30px);
-    border-radius: 5px;
-    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
-}
-
-
-#text_unscharf{
-    transform: translate(-50px,30px); 
-}
-#text_scharf{
-    transform: translate(-150px,30px);
-}
-
-/*Hover on thumbnail*/
-.thumbnail:hover {
+.row a:hover {
+    transform: scale(1.05);
     transition: 1s ease-in-out;
-    transform: scale(1.1);
+}
+img{
+    border-radius: 5px;
+}
+#image {
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
+}
+
+#row_all {
+    transform: translate(270px,40px);
 }
 /*------------------------------------------Footer------------------------------------------*/
 footer {
@@ -130,4 +112,3 @@ footer {
     color: #d5dbe1;
     text-align: center; 
 }
-
