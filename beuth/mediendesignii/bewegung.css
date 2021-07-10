@@ -115,7 +115,17 @@ h2{
     position: absolute;
     right: 0;
   }
-  
+
+  #fisch1 {
+      height: auto;
+      max-width: 1000px;
+      transform: translateX(-400px);
+  }
+  #fisch2 {
+    height: auto;
+    max-width: 1000px;
+}
+
 
   #text_scharf {
     color: #E2DDDD;
