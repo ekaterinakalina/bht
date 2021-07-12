@@ -44,7 +44,7 @@ $(function () { //jQuery Funktion
         $("#q0_ε_ε").css("background", "#A59C9C");
         $("#edge1").css("color", "#443B3B");
     }
-})
+}); 
 
 //Knoten
 $("#node_q1").on({
@@ -768,7 +768,7 @@ function keller_richtig(){
         break
     }
 }
-})
+});
 
 //----------------------------------------- Alert -------------------------------------------------------//
  /**

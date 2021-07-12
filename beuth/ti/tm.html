@@ -3,7 +3,7 @@
     
  <!------------------------------------ Meta, Title, Links ------------------------------------------------------------------>
 <head>
-     <!-- Required meta tags -->
+    <!-- Required meta tags -->
     <meta charset= "UTF-8">
     <meta name= "viewport" content= "width=device-width, initial scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,13 +20,16 @@
     <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
     <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet"> 
     <link href="https://unpkg.com/intro.js/themes/introjs-modern.css" rel="stylesheet">
+    <!--Bootstrap Slider-->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css">
     <!--CSS file-->                                                    
     <link rel ="stylesheet" href="tm.css">                                                
     <title>Turing Machine</title>
 </head>
 <body>
 
-       <!-- Navigation -->
+    <!-- Navigation -->
     <div class="nav-container">
         <div class= "wrapper">
             <nav>
@@ -66,7 +69,10 @@
         <h1>Turing machine: Embedded Reber Grammar</h1> 
         <!--Headline-->  
         <section>
-            <div class="graph_container">
+            <div class="graph_container"
+            data-toggle="popover" 
+            title="Grapgh"
+            data-content="Turing Machine als Graph">
             
                 <!--Graph Nodes--> 
                 <div class="graph">
@@ -76,8 +82,8 @@
                 <div id="node_q3" class="node">q3</div>
                 <div id="node_1" class="node">1</div>
                 <div id="node_2" class="node">2</div>
-                <div id="node_3" class="node">3</div>
-                <div id="node_4" class="node">4</div>
+                <div id="node_3" class="node">4</div>
+                <div id="node_4" class="node">3</div>
                 <div id="node_5" class="node">5</div>
                 <div id="node_6" class="node">6</div>
                 <div id="node_q4" class="node">q4</div>
@@ -142,14 +148,35 @@
                 <img id="arrow_loop3" src="images/keller/arrow2.svg">
                 <img id="arrow_loop4" src="images/keller/arrow2.svg">
 
+                <!--Overlay Reber Grammar nodes--> 
                 <div class="reber_overlay"></div>
+
+                <!--Tape Head
+                <div class="head_animation">
+                    <div class="zustand_container">
+                         <img src="images/tm_tape.svg"  class="arrow" id="arrow_head">
+                         <div id="head_box"><p id="head_text">*</p></div>
+                    </div>
+                    <div id="array_wrapper"><p id="head_array"></p></div>
+                </div>--> 
+
+
+                 <!--Status Text--> 
+                <div class="status"
+                data-toggle="popover" 
+                title="Status"
+                data-content="Status zeigt, ob der Ausdruck von Turing Machine akzeptiert wird.">
+                    <h2>Status</h2>
+                    <p id="status_word" style="font-weight: bolder;"></p>
+                    <p id="status_text" style="font-weight: bolder;"></p>
+                </div>
             </div>        
         </section>
 
 
         <!--Tabelle--> 
         <section class="tabelle">
-               <!--Text Info--> 
+            <!--Text Info--> 
             <div class="info">
                 <p><strong>Vokabular: T = {Q; Σ; Г; δ; q<sub>0</sub>; q<sub>accept</sub>; q<sub>reject</sub>}</strong><br>
                 Zustände <strong>Q</strong> = {q1;q2;q3;1;2;3;4;5;6;q4;q5;q6;q7;q8;q9}<br>
@@ -160,8 +187,11 @@
                 <strong>q<sub>reject</sub></strong> = {q10}</p>
             </div>
 
-            <table>
-                <!--Tabelle: Header--> 
+            <table    
+            data-toggle="popover" 
+            title="Tabelle"
+            data-content="Turing Machine als Tabelle">
+            <!--Tabelle: Header--> 
                 <thead id="table_top">
                     <th id="table_top" class="table_letter">δ:Q</th>
                     <th id="table_top" class="table_letter">Г</th>
@@ -232,7 +262,7 @@
                     <th class="table_letter">2</th>
                     <th class="table_letter">X</th>
                     <th class="table_letter">__</th>
-                    <th class="table_letter">4</th>
+                    <th class="table_letter"></th>
                     <th class="table_letter">R</th>
                 </tr>
                 <tr id="line10">
@@ -346,32 +376,27 @@
 
                
         <section>
-            <!--Buttons--> 
+        <!--Buttons--> 
             <div class="button_container">
-                <button id="play_richtig" type="button" >richtiger Ausdruck</button>
-                <button id="play_falsch"  type="button">falscher Ausdruck</button>
-                <button id="play" type="button" >play</button>
-                <button id="play" type="button" >step</button>
-                <button id="play" type="button" >reset</button>
-                <button id="tour"  type="button" onclick="tour()">Tour starten!</button>
-                <button id="tech" type="button">Dokumentation</button>
-                <input class="form-control" type="text" placeholder="Default input">
+                <!--Slider + Popover --> 
+                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="1500" data-slider-step="200" data-slider-value="800"/>
+                <button id="play_richtig" type="button" class="btn btn-light btn-block mt-4">richtiger Ausdruck</button>
+                <button id="play_falsch"  type="button" class="btn btn-light btn-block mt-4">falscher Ausdruck</button>
+                <button id="tour"  type="button"  class="btn btn-secondary mt-3">Tour starten!</button>
+                <button id="reset"  type="button"  class="btn btn-secondary mt-3"><div id="reset_img"></div></button>
+                <button id="dokumentation" type="button" class="btn btn-secondary mt-3">Dokumentation</button>
             </div>
         </section>
-
-        <section>
-             <!--Status Text--> 
-            <div class="status_text"></div>
-        </section>
+        </div>
     </main>  
     
     <!--Footer--> 
     <footer>
-        <p>Author: Ekaterina Kalina</p>
-        <p>Modul: Theoretische Informatik bei Prof. Felix Gers, SoSe21 Berliner Hochschule für Technik</p>
+        <p>Author: Ekaterina Kalina<br>
+           Modul: Theoretische Informatik bei Prof. Dr. Felix Gers, SoSe21 Berliner Hochschule für Technik</p>
     </footer>
 
     <!------------------------------------ Javascript file ------------------------------------------------------------------>                 
-    <script src=></script> 
+    <script src="tm.js"></script> 
 </body>
 </html>
