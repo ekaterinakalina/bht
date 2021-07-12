@@ -379,12 +379,12 @@
         <!--Buttons--> 
             <div class="button_container">
                 <!--Slider + Popover --> 
-                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="1500" data-slider-step="200" data-slider-value="800"/>
+                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="2000" data-slider-step="200" data-slider-value="1000"/>
                 <button id="play_richtig" type="button" class="btn btn-light btn-block mt-4">richtiger Ausdruck</button>
                 <button id="play_falsch"  type="button" class="btn btn-light btn-block mt-4">falscher Ausdruck</button>
                 <button id="tour"  type="button"  class="btn btn-secondary mt-3">Tour starten!</button>
                 <button id="reset"  type="button"  class="btn btn-secondary mt-3"><div id="reset_img"></div></button>
-                <button id="dokumentation" type="button" class="btn btn-secondary mt-3">Dokumentation</button>
+                <button id="dokum" onclick="myAlert()" type="button" class="btn btn-secondary mt-3">Dokumentation</button>
             </div>
         </section>
         </div>
@@ -395,6 +395,53 @@
         <p>Author: Ekaterina Kalina<br>
            Modul: Theoretische Informatik bei Prof. Dr. Felix Gers, SoSe21 Berliner Hochschule für Technik</p>
     </footer>
+
+ <!------------------------------------  Dokumentation Text ------------------------------------------------------>  
+ <div id="alert_text">
+    <p>Diese Turing Machine ist die automatisierte Version von Embedded Reber Grammar.</p> 
+    <p>TM für Embedded Reber Grammar akzeptiert Wörter mit Vokabular {B;T;P;S;X;V;E}</p>  
+    <p>Eine Besonderheit besteht darin, dass das zweite und das vorletzte Zeichen des Wortes identisch sein müssen (T..T oder P..P).</p>
+    Die Webanwendung ist automatisch animiert.
+    <p>Z.B: "BTBPXSETE"</p> 
+
+    <p>**TECH STACK**</p>
+    <p>*JS Funktionen*</p>
+    
+    Button Events:
+    disablebuttons() - schaltet alle Buttons während der Simulation aus;
+    enablebuttons() - schaltet alle Buttons nach der Simulation wieder ein;
+    reset()
+    
+    Reber Wörter generieren:
+    tm_richtig() - generiert richtige Reber-Ausdrucke mit Hilfe von Array 
+    "tm_ausdrucke_richtig" und der Methode "Math.floor(Math.random()"; 
+    tm_falsch() - generiert falsche Reber-Ausdrucke mit Hilfe von Array 
+    "tm_ausdrucke_falsch" und der Methode "Math.floor(Math.random()";
+    setTimeout() spielt die Animationen schrittweise vor;
+
+    Status Text:
+    richtig_text() - zeigt eine String-Bestätigung für ergolgreiche Simulation;
+    rejectstate() - warnt über den Qreject-Zustand für falsche Ausdrucke;
+    originalcolors() - alle Animationen(Farben-Texte) werden zurückgesetzt;
+
+    Animation:
+    q0_B(), q1_P(), q1_T()... - Animationsübergänge für cases; jedes Mal werden Tabellenzeilen, Knoten, Kanten animiert; 
+    mouseenter()/mouseleave() - beim Mauszeiger auf den Tabellenzeilen werden jeweiligen Knoten, Kanten gezeigt;
+
+    Navigation:
+    tour() - ein Überblick über die App mit Hilfe des Tools IntroJS;
+    myAlert() - alert-Funktion für diese Dokumentation;
+
+
+    <p>**LIBRARIES UND TOOLS**</p> 
+    <p>jQuery: ist eine JS-Bibliothek und wird zur einfacheren Manipulation der HTML-Elemente benutzt.
+       erreicht; Link: https://api.jquery.com</p> 
+    <p>Bootstrap5: JS, HTML5, CSS für responsive, mobile-first Webdesign. Link: https://getbootstrap.com</p> 
+    <p>*SweetAlert*: ein JS Framework, das als mehr interessanter Ersatz für "window.alert()"-Funktion dient und
+        das Lesen dieser Dokumentation ermöglicht! Link: https://sweetalert.js.org</p> 
+    <p>*Intro.js*: ein JS Framework für schrittweise Darstellung des Interfaces; Link: https://introjs.com/</p>
+    <p>*Autoprefixer*: fügt Präfixe zu CSS-Attributen, um sie für verschiedene Browsers zu adoptieren; Link: https://github.com/postcss/autoprefixer</p>
+ </div>
 
     <!------------------------------------ Javascript file ------------------------------------------------------------------>                 
     <script src="tm.js"></script> 

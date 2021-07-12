@@ -86,7 +86,7 @@ nav ul{
 }
 /*---------------------------------------- Main container ----------------------------------------*/
 .main_container {
-  position: relative;
+  position: fixed;
   width: 100%; 
   margin: 0 auto;
   height: calc(110vh - 70px);
@@ -526,6 +526,10 @@ footer{
 
  #ex1Slider .slider-selection {
 	background: #BABABA;
+}
+
+#alert_text{
+  display:none;
 }
 
 

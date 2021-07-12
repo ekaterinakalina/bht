@@ -2,12 +2,12 @@
 $(function () {  //jQuery Funktion
 
 
- //------------------------------------_--- Button Events--------------------------------------------------//
+ //--------------------------------------- Button Events--------------------------------------------------//
  //Button "richtiger Ausdruck" 
  $("#play_richtig").click(tm_richtig);
  $("#play_falsch").click(tm_falsch);
  $("#reset").click(reset);
- $("#tour").click(tour)
+ $("#tour").click(tour);  
 
 
  /*Popover Funktion für HTML-Elemnte*/
@@ -45,7 +45,6 @@ function reset(){
         clearTimeout (tm_ausgabe_richtig);
     }
 
-
  // Slider
  $('#ex1').slider({
 	formatter: function(time) {
@@ -62,7 +61,8 @@ function reset(){
  var tm_ausdrucke_richtig =  
  ["BTBPSXSETE", "BPBTVPSEPE", "BTBTTVVETE", "BPBPSSXXTTVVEPE", "BTBPXSETE"];
  var tm_ausdrucke_falsch =  
- ["BTBPSXSEPE", "BPBVXSEPE", "BPBTVPSETE", "BPBTTTTXVEPE"];
+ ["BTBPSXSEPE", "BPBVXSEPE", "BPBTVPSETE", "BPBTTTXVEPE"];
+
 /*----------------------------------------- Richtige Ausdrucke ------------------------------------------*/
 /**
 * Funktion für Ausgabe von richtigen Ausdrucken für den Kellerautomat. 
@@ -326,7 +326,6 @@ function tm_richtig(){
 
 }
 
-
 /*----------------------------------------- Falsche Ausdrucke ------------------------------------------*/
 /**
 * Funktion für Ausgabe von FALSCHEN Ausdrucken für den Kellerautomat. 
@@ -341,7 +340,7 @@ function tm_falsch(){
     switch (tm_ausgabe_falsch) {
         case "BTBPSXSEPE":
     
-             setTimeout(function(){
+            setTimeout(function(){
                 disablebuttons();   //disabled Buttons inside setTimeout
                 q0_B()
                 }, time);
@@ -377,10 +376,107 @@ function tm_falsch(){
                 originalcolors();  
                 }, time*12);
         break
+
+        case "BPBVXSEPE":
+            setTimeout(function(){
+                disablebuttons();   
+                q0_B()
+                }, time);
+            setTimeout(function(){
+                q1_P()
+                }, time*2);
+            setTimeout(function(){
+                q2_B()
+                }, time*3);
+            setTimeout(function(){
+                $("#node_1").css("background", "#F58A8A");
+                $("#edge7, #edge6").css("color", "#F58A8A");
+                $("#line7, #line6").css("background", "#F58A8A");
+                rejectstate();
+                }, time*4);
+            setTimeout(function(){
+                enablebuttons();   
+                originalcolors();  
+                }, time*7);
+        break
+
+        case "BPBTVPSETE":
+            setTimeout(function(){
+                disablebuttons();   //disabled Buttons inside setTimeout
+                q0_B()
+                }, time);
+            setTimeout(function(){
+                q1_P()
+                }, time*2);
+            setTimeout(function(){
+                q2_B()
+                }, time*3);
+            setTimeout(function(){
+                state1_T()
+                }, time*4);
+            setTimeout(function(){
+                state3_V()
+                }, time*5);
+            setTimeout(function(){
+                state5_P()
+                }, time*6);
+            setTimeout(function(){
+                state4_S()
+                }, time*7);
+            setTimeout(function(){
+                state6_E()
+                }, time*8);
+            setTimeout(function(){
+                $("#node_q4").css("background", "#F58A8A");
+                $("#edge18").css("color", "#F58A8A");
+                $("#line18").css("background", "#F58A8A");
+                rejectstate();
+                }, time*9);
+            setTimeout(function(){
+                enablebuttons();   
+                originalcolors();  
+                }, time*12);
+        break
+
+        case "BPBTTTXVEPE":
+            setTimeout(function(){
+                disablebuttons();   
+                q0_B()
+                }, time);
+            setTimeout(function(){
+                q1_P()
+                }, time*2);
+            setTimeout(function(){
+                q2_B()
+                }, time*3);
+            setTimeout(function(){
+                state1_T()
+                rejectstate();
+                }, time*4);
+            setTimeout(function(){
+                state3_T()
+                rejectstate();
+                }, time*5);
+            setTimeout(function(){
+                state3_T()
+                rejectstate();
+                }, time*6);
+            setTimeout(function(){
+                state3_T()
+                $("#node_4").css("background", "#F58A8A");
+                $("#edge9, #edge11").css("color", "#F58A8A");
+                $("#line10, #line11").css("background", "#F58A8A");
+                rejectstate();
+                }, time*7);
+            setTimeout(function(){
+                enablebuttons();   
+                originalcolors();  
+                }, time*11);
+        break
     }
 }
 
-
+/*----------------------------------------- Status Text ------------------------------------------*/
 /*Richtiger Ausdruck Text*/
 function richtig_text(){
     //Statustext: richtig
@@ -390,12 +486,8 @@ function richtig_text(){
     "Ausdruck ist richtig und wird von<br>Turing Machine akzeptiert!<br>Simulation läuft.";
 }
 
-function rejectstate(){
+function rejectstate(){  
     $("h2").hide();
-    $(".status").css('background', "#F58A8A");
-    $(".status").css('background', '#A59C9C', "filter", 'opacity(0.7)');
-    $(".status").css('background', "#F58A8A");
-    $(".status").css('background', '#A59C9C', "filter", 'opacity(0.7)');
     $(".status").css('background', "#F58A8A");
     document.getElementById("status_text").innerHTML = 
     "Qreject wurde erreicht.<br> Das Wort wird  von Turing Machine nicht akzeptiert.";
@@ -410,7 +502,6 @@ function originalcolors(){
     $("#status_text").html("Click auf <i>richtiger/falscher Ausdruck,</i><br>um Simulation zu starten!");
     $("#status_word").html("");
 }
-
 
 
 /*---------------------------------------------------- Animation:Übergänge ----------------------------------------------------*/
@@ -804,7 +895,7 @@ async function tour(){
             {intro: "Welcome to Turing Machine!"},
             
             {element: document.querySelector("graph_container"),
-             intro: "Turing Machine: Graph und Vokabular. Diese TM kann Wörter mit Buchstaben B, T, P, S, V, X, E akzeptieren. Die TM stellt Embedded Reber Gramma dar. Wichtig: die vorletzten Zeichen des Wortes müssen identisch sein (T || P)!"
+             intro: "Turing Machine: Graph und Vokabular. Diese TM kann Wörter mit Buchstaben B, T, P, S, V, X, E akzeptieren. Die TM stellt Embedded Reber Gramma dar. Wichtig: das zweite und das vorletzte Zeichen des Wortes müssen identisch sein (T..T oder P..P)!"
             },
 
             //Intro Button "richtiger Ausdruck"
@@ -815,6 +906,11 @@ async function tour(){
             //Intro Button "falscher Ausdruck"
             {element: document.querySelector("#play_falsch"),
              intro: "Generiert ein falsches Reber-Wort."
+            }, 
+
+             //Intro Button "falscher Ausdruck"
+             {element: document.querySelector("#reset"),
+             intro: "Reset"
             }, 
 
             //Intro Status
@@ -829,8 +925,13 @@ async function tour(){
         ],
     }).start();
 }
-
+                                                                                            
 }); // end of jQuery function 
+
+/*Alert-Funktion, JS Framework "Sweet ALert"*/
+function myAlert() {
+    swal("Dokumentation für Projektaufgabe4: Turing Machine", document.getElementById("alert_text").innerText)
+    }     
 
 
     
