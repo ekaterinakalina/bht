@@ -109,11 +109,17 @@ h3{
     transform: translate(510px,-620px);
 }
 
-/*Thumbnails: more width*/
+/*Thumbnails: more width + hover*/
 .row a{
     width: 2300px;
     border-radius: 5px;
 }
+.row a:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+
+
 #row_oben{
     transform: translateY(50px);
 }

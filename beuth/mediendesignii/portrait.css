@@ -89,7 +89,6 @@ h2{
 }
 /*Thumbnails: change size + hover*/
 .row a {
-    border-radius: 5px;
     width: 3000px;
 }
 .row a:hover {
