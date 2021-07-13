@@ -1,7 +1,7 @@
 
 $(function (){
 
-    //Alle rules_ divs verstecken
+    //Alle rules divs verstecken
     $("#rules_hands").hide()
     $("#rules_mask").hide()
     $("#rules_distance").hide()
@@ -52,7 +52,7 @@ $(function (){
     });
     
   
-    //Infokreise werden und bleiben grün vbei mouseenter
+    //Infokreise werden und bleiben grün bei mouseenter
     $("#wash_hands").on({
         mouseenter: function(){
             $(this).css("background", "#8BCDAB");
@@ -78,9 +78,6 @@ $(function (){
             $(this).css("background", "#8BCDAB");
         }
     })
-
-
-    $('.carousel').carousel()
 
   });
   

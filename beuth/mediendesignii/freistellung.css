@@ -63,6 +63,7 @@ body {
 .arrow_box {
     transform: translate(700px,-70px);
 }
+
 /*------------------------------------------Main------------------------------------------*/
 main {
     min-height: 600px;
@@ -103,9 +104,12 @@ h2{
     font-size: 30px;
     font-weight: bold;
 }
+
+/*Border radius*/
 img {
     border-radius: 5px;
 }
+
 /*------------------------------------------Footer------------------------------------------*/
 footer {
     width: 100%;

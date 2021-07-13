@@ -68,6 +68,7 @@ body {
 .logo_box {
     transform: translateY(30px);
 }
+
 /*Hamburger menu*/
 .hamburger-menu {
      height: 60px;
@@ -90,7 +91,6 @@ body {
     transition: 0.5s;
     position: relative;
 }
-
 .bar:before, .bar:after{
     content: "";
     position: absolute;
@@ -99,11 +99,9 @@ body {
     background-color: #E2DDDD;
     transition: 0.5s;
 }  
-
 .bar:before{
     transform: translateY(-9px);
 }
-
 .bar:after{
     transform: translateY(9px);
 }
@@ -113,85 +111,15 @@ body {
     transform: rotate(360deg);
     background-color: transparent;
 }
-
 .container.active .bar:before{
     transform: translateY(0) rotate(45deg);
 }
-
 .container.active .bar:after{
     transform: translateY(0) rotate(-45deg);
 }
 
 
-
-.title_animation {
-    display: inline-block;
-}
-#first_title, #second_title {
-    display: inline-block;
-    overflow: hidden;
-    height: 1.5em;
-    
-}
-#second_title {
-    color: #E2DDDD;
-    filter: drop-shadow(8px 8px 10px #262628);
-}
-#first_title {
-    color: #E2DDDD;
-    filter: drop-shadow(8px 8px 10px #262628);
-}
-#first_title {
-    animation: first_title_animation 10s infinite;
-    animation-delay: -10s ease-in;
-    max-width: 0;
-}
-
-@keyframes first_title_animation {
-    0% {
-      max-width: 500px;
-    }
-    
-    25% {
-      max-width: 0;
-    }
-    
-    75% {
-      max-width: 0;
-    }
-    
-    90% {
-      max-width: 500px;
-    }
-    
-    100% {
-      max-width: 500px;
-    }
-  }
-  #second_title {
-    animation: second_title_animation 10s infinite;
-    animation-delay: -10s ease-in;
-    max-width: 0;
-  }
-  @keyframes second_title_animation  {
-    0% {
-      max-width: 0;
-    }
-    25% {
-      max-width: 0;
-    }
-    50% {
-      max-width: 500px;
-    }
-    75% {
-      max-width: 0;
-    }
-    100% {
-      max-width: 0;
-    }
-  }
 /*------------------------------------------Main------------------------------------------*/
-
 .inner {
     max-width: 800px;
     text-align:center;
@@ -256,7 +184,6 @@ header {
     cursor: pointer;
     transform: perspective(1500px) rotateY(15deg) translateZ(300px) scale(0.5);
 }
-
 @keyframes main-animation{
     from{
          transform: translate(0); 
@@ -265,6 +192,77 @@ header {
         transform: perspective(1500px) rotateY(20deg) translateZ(300px) scale(0.5); 
     }
 }
+
+
+
+/*------------------------------------------Title Animation------------------------------------------*/
+.title_animation {
+    display: inline-block;
+}
+#first_title, #second_title {
+    display: inline-block;
+    overflow: hidden;
+    height: 1.5em;
+}
+#second_title {
+    color: #E2DDDD;
+    filter: drop-shadow(8px 8px 10px #262628);
+}
+#first_title {
+    color: #E2DDDD;
+    filter: drop-shadow(8px 8px 10px #262628);
+}
+#first_title {
+    animation: first_title_animation 10s infinite;
+    animation-delay: -10s ease-in;
+    max-width: 0;
+}
+/*1st title animation*/
+@keyframes first_title_animation {
+    0% {
+      max-width: 500px;
+    }
+    
+    25% {
+      max-width: 0;
+    }
+    
+    75% {
+      max-width: 0;
+    }
+    
+    90% {
+      max-width: 500px;
+    }
+    
+    100% {
+      max-width: 500px;
+    }
+  }
+  /*2nd title animation*/
+  #second_title {
+    animation: second_title_animation 10s infinite;
+    animation-delay: -10s ease-in;
+    max-width: 0;
+  }
+  @keyframes second_title_animation  {
+    0% {
+      max-width: 0;
+    }
+    25% {
+      max-width: 0;
+    }
+    50% {
+      max-width: 500px;
+    }
+    75% {
+      max-width: 0;
+    }
+    100% {
+      max-width: 0;
+    }
+  }
+  
 
 /*------------------------------------------Links------------------------------------------*/
 
@@ -300,7 +298,6 @@ ul {
 .container.active .links a{
     animation: appear 0.5s forwards ease var(--i);
 }
-
 @keyframes appear {
     from {
         opacity: 0;

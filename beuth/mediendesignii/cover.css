@@ -87,6 +87,7 @@ h2{
     color: #d5dbe1;
     font-size: 40px;
 }
+
 /*Thumbnails: change size + hover*/
 .row a {
     border-radius: 5px;
@@ -96,15 +97,14 @@ h2{
     transform: scale(1.05);
     transition: 1s ease-in-out;
 }
-img{
-    border-radius: 5px;
-}
-#image {
-    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
-}
-
 .row {
     transform: translateY(40px)
+}
+
+/*Thumbnails: shadow + radius*/
+#image {
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
 }
 
 /*------------------------------------------Footer------------------------------------------*/

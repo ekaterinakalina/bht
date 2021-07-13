@@ -1,4 +1,4 @@
-       
+ /*Hamburger menu animation*/
  const hamburger_menu = document.querySelector(".hamburger-menu");
  const container = document.querySelector(".container");
 

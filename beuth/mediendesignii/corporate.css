@@ -1,7 +1,7 @@
 /*------------------------------------------Navbar------------------------------------------*/
-
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 
 /*Body*/
 *{
@@ -9,7 +9,6 @@
     margin: 0;
     box-sizing:  border-box;
 }
-
 body {
     font-family: "Quicksand", sans-serif;
     background-color: #323a43;
@@ -51,9 +50,8 @@ body {
     transform: translate(-650px,0px);
 }
 
-/*Arrow + Animation*/
+/*Arrow + Animation
 #arrow {
-    width: 250%;
     filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
     transition: 600ms;
 }
@@ -62,17 +60,18 @@ body {
 }
 .arrow_box {
     transform: translate(700px,-70px);
-}
-/*------------------------------------------Main------------------------------------------*/
+}*/
+
+/*------------------------------------------Main Infografik------------------------------------------*/
 main {
     min-height: 600px;
     width: 100%;
     margin: 0 auto;
     position: relative;
     display: flex;
-    flex-wrap: wrap;           /*!Wrap*/ 
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    transform: translateY(40px);
 }
 /*------------------------------------------Content------------------------------------------*/
 /*Titles*/
@@ -82,34 +81,52 @@ h1{
     justify-content: center;  /*!schieben Text in die Mitte:*/
     text-align: center;       /*!schieben Text in die Mitte:*/
     font-size: 60px;
+    transform: translateY(-50px);
 }
 h2{
     color: #d5dbe1;
     font-size: 40px;
+    transform: translateY(-30px);
 }
-/*Thumbnails: change size + hover*/
-.row a {
-    border-radius: 5px;
-    width: 2300px;
-}
-.row a:hover {
-    transform: scale(1.05);
-    transition: 1s ease-in-out;
+h3{
+    color: #d5dbe1;
+    transform: translateY(-30px);
 }
 
-/*Thumbnails: border radius + shadow*/
+/*Move h3s*/
+#website{
+    transform: translate(-500px,120px);
+}
+#bcard{
+    transform: translate(10px,75px);
+}
+#flyer{
+    transform: translate(520px,30px);
+}
+
+/*Move Business card*/
+#card_unten {
+    transform: translate(510px,-620px);
+}
+
+/*Thumbnails: more width*/
+.row a{
+    width: 2300px;
+    border-radius: 5px;
+}
+#row_oben{
+    transform: translateY(50px);
+}
+#row_unten{
+    transform: translateY(50px);
+}
+
+/*Thumbnails: shadow + radius*/
 #image{
     border-radius: 5px;
     box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.25);
 }
 
-/*Thumbnails: move*/
-#row_oben {
-    transform: translateY(40px);
-}
-#row_unten {
-    transform: translateY(60px);
-}
 /*------------------------------------------Footer------------------------------------------*/
 footer {
     width: 100%;

@@ -80,25 +80,38 @@ h2{
     font-size: 40px;
 }
 
+/*Container*/
  .container {
     display: flex;
     justify-content: center;
-    
   }
   
+ /*Thumbnails*/ 
   .image {
     max-width: 600px;
     margin: 25px;
   }
-
-  
   .image img {
     max-width: 100%;
     border-radius: 5px;
     filter: drop-shadow(8px 8px 2px rgba(0, 0, 0, 0.25));
     transform: translateY(50px);
   }
+
+  /*Thumbnails: more width + move*/
+  #fisch1 {
+    height: auto;
+    max-width: 950px;
+    transform: translate(-350px,50px);
+}
+  #fisch2 {
+  height: auto;
+  max-width: 950px;
+  transform: translate(60px,50px);
+}
+
   
+/*Loupe styling*/
   .loupe {
     display: none;
     position: absolute;
@@ -110,32 +123,21 @@ h2{
     cursor: crosshair;
     overflow: hidden;
   }
-  
   .loupe img {
     position: absolute;
     right: 0;
   }
 
-  #fisch1 {
-      height: auto;
-      max-width: 1000px;
-      transform: translateX(-400px);
-  }
-  #fisch2 {
-    height: auto;
-    max-width: 1000px;
-}
-
-
+ /*Captions*/
   #text_scharf {
     color: #E2DDDD;
     font-size: 25px;
-    transform: translate(0px,50px);
+    transform: translate(190px,80px);
   }
   #text_unscharf {
     color: #E2DDDD;
     font-size: 25px;
-    transform: translate(0px,50px);
+    transform: translate(70px,80px);
   }
 /*------------------------------------------Footer------------------------------------------*/
 footer {

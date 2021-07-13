@@ -1,3 +1,5 @@
+
+/*---------------------------------------------Loupe*---------------------------------------------*/
 var $loupe = $(".loupe"),
     loupeWidth = $loupe.width(),
     loupeHeight = $loupe.height();
